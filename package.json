@@ -1,0 +1,43 @@
+{
+  "name": "web-vaxert-main",
+  "version": "1.0.0",
+  "description": "Vaxert",
+  "author": "Jofferson R Tiquez",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@nuxtjs/dotenv": "^1.4.0",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "axios": "^0.21.0",
+    "debug": "^4.1.1",
+    "lodash": "^4.17.20",
+    "nuxt": "^2.0.0",
+    "nuxt-webfontloader": "^1.1.0",
+    "vue-analytics": "^5.22.1",
+    "vue-media-query-mixin": "^0.1.0",
+    "vue-morphling": "^1.1.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.9.0",
+    "@nuxtjs/eslint-config": "^2.0.0",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/google-analytics": "^2.4.0",
+    "@nuxtjs/vuetify": "^1.0.0",
+    "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.1.0",
+    "eslint": "^6.1.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "jest": "^24.1.0",
+    "pug": "^2.0.4",
+    "pug-plain-loader": "^1.0.0",
+    "vue-jest": "^4.0.0-0"
+  }
+}

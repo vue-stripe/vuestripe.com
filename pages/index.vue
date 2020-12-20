@@ -1,0 +1,84 @@
+<template lang="pug">
+  v-container(fill-height)
+    v-row(justify="center" align="center")
+      v-col(cols="12" md="12").text-center
+        img(width="200" src="../assets/vue-stripe-logo-variant-1-small.png")
+        h1 Vue Stripe
+        h2 Stripe Checkout & Elements for Vue.js
+        br
+        v-btn(
+          x-large
+          color="primary"
+          outlined
+          rounded
+        ).mx-1.text-none Stripe Checkout
+        v-btn(
+          x-large
+          color="primary"
+          outlined
+          rounded
+        ).mx-1.text-none Stripe Elements
+        v-btn(
+          x-large
+          color="primary"
+          outlined
+          rounded
+        ).mx-1.text-none GitHub
+        v-btn(
+          x-large
+          color="primary"
+          outlined
+          rounded
+        ).mx-1.text-none Open Collective
+        v-btn(
+          x-large
+          color="primary"
+          rounded
+          depressed
+        ).mx-1.text-none Get Started
+</template>
+
+<script>
+import headMeta from '~/utils/head-meta';
+export default {
+  data () {
+    this.pk = process.env.STRIPE_PK;
+    return {
+      loading: false,
+      items: [
+        {
+          sku: 'sku_FdQKocNoVzznpJ',
+          quantity: 1,
+        },
+      ],
+    };
+  },
+  computed: {
+    successUrl () {
+      return process.browser ? `${window.location.origin}/success` : '';
+    },
+    cancelUrl () {
+      return process.browser ? `${window.location.origin}/cancel` : '';
+    },
+  },
+  methods: {
+    checkout () {
+      this.loading = true;
+      this.$refs.checkoutRef.redirectToCheckout();
+    },
+  },
+  head () {
+    return headMeta({
+      title: 'Stripe Checkout & Elements for Vue.js - Vue Stripe',
+      description: 'Vue Stripe Stripe Checkout & Vue Stripe Elements',
+      socialBanner: require('../assets/vue-stripe-logo-variant-1-small.png'),
+    });
+  },
+};
+</script>
+
+<style scoped>
+h1 {
+  font-size: 70px;
+}
+</style>
