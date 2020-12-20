@@ -2,6 +2,7 @@ export default {
   mode: 'universal',
   env: {
     ENV: process.env.ENV,
+    NODE_ENV: process.env.NODE_ENV,
     GA_ID: process.env.GA_ID,
   },
   /*
