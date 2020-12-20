@@ -2,8 +2,8 @@
   v-container(fill-height)
     v-row(justify="center" align="center")
       v-col(cols="12" md="12").text-center
-        img(width="200" src="../assets/vue-stripe-logo-variant-1-small.png")
-        h1 Vue Stripe
+        img(width="250" src="../assets/vue-stripe-logo-variant-1-small.png")
+        h1 Vue #[span.primary--text Stripe] 💳
         h2 Stripe Checkout & Elements for Vue.js
         br
         v-btn(
@@ -11,31 +11,37 @@
           color="primary"
           outlined
           rounded
-        ).mx-1.text-none Stripe Checkout
+          :block="$isMobile"
+          :to="{ name: 'stripe-checkout-getting-started' }"
+        ).mx-1.my-1.text-none Stripe Checkout
         v-btn(
           x-large
           color="primary"
           outlined
           rounded
-        ).mx-1.text-none Stripe Elements
+          :block="$isMobile"
+        ).mx-1.my-1.text-none Stripe Elements
         v-btn(
           x-large
           color="primary"
           outlined
           rounded
-        ).mx-1.text-none GitHub
+          :block="$isMobile"
+        ).mx-1.my-1.text-none GitHub
         v-btn(
           x-large
           color="primary"
           outlined
           rounded
-        ).mx-1.text-none Open Collective
+          :block="$isMobile"
+        ).mx-1.my-1.text-none Open Collective
         v-btn(
           x-large
           color="primary"
           rounded
           depressed
-        ).mx-1.text-none Get Started
+          :block="$isMobile"
+        ).mx-1.my-1.text-none Get Started
 </template>
 
 <script>
