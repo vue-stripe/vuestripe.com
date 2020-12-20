@@ -32,6 +32,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/prism.js', mode: 'client', ssr: false },
     { src: '~/plugins/crisp.js', mode: 'client', ssr: false },
     { src: '~/plugins/ga.js', mode: 'client', ssr: false },
     { src: '~/plugins/media-screen.js', mode: 'client', ssr: false },
