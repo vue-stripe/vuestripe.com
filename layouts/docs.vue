@@ -1,6 +1,32 @@
 <template lang="pug">
   v-app#app
-    v-app-bar(app)
+    v-app-bar(
+      app
+      elevate-on-scroll
+    ).white
+      v-btn(
+        icon
+        large
+        @click="drawer = !drawer"
+      )
+        v-icon.primary--text mdi-hamburger
+      v-spacer
+      v-btn(
+        icon
+        large
+        href="https://github.com/vue-stripe"
+        target="_bank"
+        rel="noreferrer noopener"
+      )
+        v-icon.primary--text mdi-github
+      v-btn(
+        icon
+        large
+        href="https://opencollective.com/vue-stripe-checkout"
+        target="_bank"
+        rel="noreferrer noopener"
+      )
+        v-icon.primary--text mdi-heart
     v-navigation-drawer(
       v-model="drawer"
       app
