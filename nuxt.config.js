@@ -1,3 +1,5 @@
+import webpack from 'webpack';
+
 export default {
   mode: 'universal',
   env: {
@@ -108,5 +110,17 @@ export default {
   /*
   ** Build configuration
   */
-  build: {},
+  build: {
+    extend (config, { isDev, isClient }) {
+      // ..
+      config.module.rules.push({
+        test: /\.md$/i,
+        loader: 'raw-loader',
+      });
+      // Sets webpack's mode to development if `isDev` is true.
+      if (isDev) {
+        config.mode = 'development';
+      }
+    },
+  },
 };
