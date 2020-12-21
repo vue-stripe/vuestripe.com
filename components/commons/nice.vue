@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     v-btn(
-      color="success"
+      color="green"
       depressed
       outlined
       @click="nice"
@@ -9,7 +9,7 @@
     v-snackbar(
       v-model="showSnack"
       :timeout="3000"
-      color="success"
+      color="green"
       top
       center
     ) Nice :)
