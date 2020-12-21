@@ -1,6 +1,6 @@
 <template lang="pug">
   pre
-    code(:class="lang").elevation-0
+    code(:class="lang")
       slot(name="default")
 </template>
 
@@ -10,6 +10,7 @@ export default {
   props: {
     lang: {
       type: String,
+      default: '',
     },
   },
   mounted () {
@@ -22,5 +23,15 @@ export default {
 pre, code {
   font-family: 'JetBrains Mono', monospace !important;
   font-size: 16px;
+}
+
+code {
+  display: block;
+  white-space: pre-wrap;
+  box-shadow: none;
+}
+
+code::before {
+  content: '';
 }
 </style>
