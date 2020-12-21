@@ -13,7 +13,7 @@ export default {
     return headMeta({
       title: 'Sessions - Vue Stripe Checkout',
       description: 'A guide on how to install vue stripe checkout',
-      socialBanner: require('../../assets/vue-stripe-logo-variant-1-small.png'),
+      socialBanner: require('../../assets/images/vue-stripe-logo-variant-1-small.png'),
     });
   },
 };

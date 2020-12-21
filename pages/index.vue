@@ -2,7 +2,7 @@
   v-container(fill-height)
     v-row(justify="center" align="center")
       v-col(cols="12" md="12").text-center
-        img(width="250" src="../assets/vue-stripe-logo-variant-1-small.png")
+        img(width="250" src="../assets/images/vue-stripe-logo-variant-1-small.png")
         h1 Vue #[span.primary--text Stripe] 💳
         h2 Stripe Checkout & Elements for Vue.js
         br
@@ -77,7 +77,7 @@ export default {
     return headMeta({
       title: 'Stripe Checkout & Elements for Vue.js - Vue Stripe',
       description: 'Vue Stripe Stripe Checkout & Vue Stripe Elements',
-      socialBanner: require('../assets/vue-stripe-logo-variant-1-small.png'),
+      socialBanner: require('../assets/images/vue-stripe-logo-variant-1-small.png'),
     });
   },
 };

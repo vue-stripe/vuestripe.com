@@ -32,7 +32,7 @@
       app
     )
       v-toolbar(flat)
-        img(width="45" src="~/assets/vue-stripe-logo-variant-1-small.png")
+        img(width="45" src="~/assets/images/vue-stripe-logo-variant-1-small.png")
         h2 Vue #[span.primary--text Stripe]
       v-list
         v-list-item(to="/")
@@ -52,12 +52,17 @@
             v-list-item(:to="{ name: menu.route }")
               v-list-item-content
                 v-list-item-title.pl-3 {{menu.name}}
-    v-content
+    v-content.mb-10
       nuxt
+    author-footer
 </template>
 
 <script>
+import AuthorFooter from '~/components/commons/author-footer';
 export default {
+  components: {
+    AuthorFooter,
+  },
   data () {
     return {
       drawer: null,
