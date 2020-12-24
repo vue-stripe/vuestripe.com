@@ -20,6 +20,7 @@
           outlined
           rounded
           :block="$isMobile"
+          :to="{ name: 'stripe-elements-getting-started' }"
         ).mx-1.my-1.text-none Stripe Elements
         v-btn(
           x-large
@@ -41,6 +42,7 @@
           rounded
           depressed
           :block="$isMobile"
+          :to="{ name: 'stripe-checkout-getting-started' }"
         ).mx-1.my-1.text-none Get Started
 </template>
 
