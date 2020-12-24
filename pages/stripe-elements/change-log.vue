@@ -11,7 +11,7 @@ export default {
   layout: 'docs',
   head () {
     return headMeta({
-      title: 'Change Log - Vue Stripe Checkout',
+      title: 'Change Log - Vue Stripe Elements',
       description: 'A guide on how to install vue stripe checkout',
       socialBanner: require('../../assets/images/vue-stripe-logo-variant-1-small.png'),
     });
