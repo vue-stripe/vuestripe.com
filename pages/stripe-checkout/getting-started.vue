@@ -3,12 +3,12 @@
     v-row(justify="center")
       v-col(cols="12" md="10")
         h1.mb-5 Getting Started
-        page-alert(content="Vue Stripe Checkout is an easy to implement, and well maintained Vue.js plugin for Stripe Checkout.")
+        page-alert(content="Vue Stripe is an easy to implement, and well maintained Vue.js plugin for Stripe Checkout, and Elements.")
       v-col(cols="12" md="10")
         h1.mb-5 Installation
         v-card
           v-card-text
-            p Vue Stripe Checkout is available on NPM, or Yarn.
+            p Vue Stripe is available on NPM, or Yarn.
             h3 NPM
             code-snip(lang="language-bash") npm install @vue-stripe/vue-stripe
             h3 Yarn
