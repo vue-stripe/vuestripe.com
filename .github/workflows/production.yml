@@ -27,6 +27,7 @@ jobs:
         env: 
           NODE_ENV: production
           GA_ID: ${{ secrets.PROD_GA_ID }}
+          STRIPE_PK: ${{ secrets.STRIPE_PK }}
         run: yarn generate
       - name: Run deploy
         env: 
