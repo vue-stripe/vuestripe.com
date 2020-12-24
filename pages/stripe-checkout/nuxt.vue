@@ -42,7 +42,7 @@ export default {
   head () {
     return headMeta({
       title: 'Nuxt.js - Vue Stripe Checkout',
-      description: 'A guide on how to install vue stripe checkout',
+      description: 'How to use Stripe Checkout on Nuxt?',
       socialBanner: require('../../assets/images/vue-stripe-logo-variant-1-small.png'),
     });
   },
