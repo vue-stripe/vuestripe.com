@@ -87,14 +87,14 @@ export default {
           name: 'Sessions',
           route: 'stripe-checkout-sessions',
         },
-        {
-          name: 'FAQs',
-          route: 'stripe-checkout-faqs',
-        },
-        {
-          name: 'Change Log',
-          route: 'stripe-checkout-change-log',
-        },
+        // {
+        //   name: 'FAQs',
+        //   route: 'stripe-checkout-faqs',
+        // },
+        // {
+        //   name: 'Change Log',
+        //   route: 'stripe-checkout-change-log',
+        // },
       ],
       stripeElementsMenus: [
         {
@@ -102,13 +102,21 @@ export default {
           route: 'stripe-elements-getting-started',
         },
         {
-          name: 'FAQs',
-          route: 'stripe-elements-faqs',
+          name: 'Card',
+          route: 'stripe-elements-card',
         },
         {
-          name: 'Change Log',
-          route: 'stripe-elements-change-log',
+          name: 'Elements Plugin',
+          route: 'stripe-elements-plugin',
         },
+        // {
+        //   name: 'FAQs',
+        //   route: 'stripe-elements-faqs',
+        // },
+        // {
+        //   name: 'Change Log',
+        //   route: 'stripe-elements-change-log',
+        // },
       ],
     };
   },
