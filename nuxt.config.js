@@ -41,10 +41,10 @@ export default {
     { src: '~/plugins/media-screen.js', mode: 'client', ssr: false },
     { src: '~/plugins/vue-analytics.js', mode: 'client', ssr: false },
     { src: '~/plugins/vue-media-query-mixin.js', mode: 'client', ssr: false },
-    // {
-    //   src: '~/plugins/vue-stripe-checkout.js',
-    //   ssr: false,
-    // },
+    {
+      src: '~/plugins/vue-stripe-checkout.js',
+      ssr: false,
+    },
   ],
   /*
   ** Nuxt.js dev-modules

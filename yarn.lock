@@ -10192,6 +10192,11 @@ vue-server-renderer@^2.6.11:
     serialize-javascript "^2.1.2"
     source-map "0.5.6"
 
+vue-stripe-checkout@^3.5.14-beta.0:
+  version "3.5.14-beta.0"
+  resolved "https://registry.yarnpkg.com/vue-stripe-checkout/-/vue-stripe-checkout-3.5.14-beta.0.tgz#cabddd8172f7630f03e8a3ea5edb56e2cfd7e213"
+  integrity sha512-NOnZZupLdhAstEWSE7P/OLT7vuoDT8EFSPbv5sA0bi8mHsyFRAhSaoVHQBNQj0vqLH8k8Yt2dPj+PSvVY+JffA==
+
 vue-style-loader@^4.1.0:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-4.1.2.tgz#dedf349806f25ceb4e64f3ad7c0a44fba735fcf8"
