@@ -6,6 +6,7 @@ export default {
     ENV: process.env.ENV,
     NODE_ENV: process.env.NODE_ENV,
     GA_ID: process.env.GA_ID,
+    STRIPE_PK: process.env.STRIPE_PK,
   },
   /*
   ** Headers of the page
