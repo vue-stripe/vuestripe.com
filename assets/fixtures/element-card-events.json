@@ -1,0 +1,47 @@
+[
+  {
+    "name": "token",
+    "type": "object",
+    "description": "Emits the card source or the tokenized version of the user's card"
+  },
+  {
+    "name": "loading",
+    "type": "boolean",
+    "description": "Emits the current loading state of the component."
+  },
+  {
+    "name": "error",
+    "type": "object",
+    "description": "Emits whatever error the component might encounter, especially the ones from Stripe."
+  },
+  {
+    "name": "element-change",
+    "type": "void",
+    "description": "The change event is triggered when the Element's value changes. The event payload always contains certain keys, in addition to some Element-specific keys."
+  },
+  {
+    "name": "element-ready",
+    "type": "void",
+    "description": "Triggered when the Element is fully rendered and can accept element.focus calls."
+  },
+  {
+    "name": "element-focus",
+    "type": "void",
+    "description": "Triggered when the Element gains focus."
+  },
+  {
+    "name": "element-blur",
+    "type": "void",
+    "description": "Triggered when the Element loses focus."
+  },
+  {
+    "name": "element-escape",
+    "type": "void",
+    "description": "Triggered when the escape key is pressed within an Element."
+  },
+  {
+    "name": "element-click",
+    "type": "void",
+    "description": "Triggered when the Element is clicked. This event is only emmited from a paymentRequestButton Element."
+  }
+]
