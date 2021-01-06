@@ -22,6 +22,9 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/icons/favicon.ico' },
     ],
+    script: [
+      { src: 'https://js.stripe.com/v3' },
+    ],
   },
   /*
   ** Customize the progress-bar color
@@ -43,7 +46,7 @@ export default {
     { src: '~/plugins/vue-analytics.js', mode: 'client', ssr: false },
     { src: '~/plugins/vue-media-query-mixin.js', mode: 'client', ssr: false },
     {
-      src: '~/plugins/vue-stripe-checkout.js',
+      src: '~/plugins/vue-stripe.js',
       ssr: false,
     },
   ],
