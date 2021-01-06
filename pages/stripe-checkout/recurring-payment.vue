@@ -7,7 +7,7 @@
       v-col(cols="12" md="10")
         h1.mb-5 Live Demo
         p Subscribe to Centipede Gaming Channel
-        v-col(cols="12" md="5")
+        v-col(cols="12" md="6")
           v-card
             v-card-text.text-center
               img(width="200" src="~/assets/images/centipede.jpg")
