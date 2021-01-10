@@ -17,7 +17,7 @@
       v-col(cols="12" md="10")
         h1.mb-5 Use Case
         p Separate components for each card fields.
-        p I decided not to support this as a specialized component because this is not strongly recommended by Stripe, but, you can still do it using this plugin if you really need to. Just follow the example bellow:
+        p Official component for these are still in development. So this is just a sample to help you implement them on your own.
         h1.mb-5 Live Demo
         v-card
           v-card-text
