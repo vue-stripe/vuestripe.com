@@ -69,8 +69,8 @@ export default {
     return {
       loading: false,
       lineItems: [],
-      successURL: process.client && window.href,
-      cancelURL: process.client && window.href,
+      successURL: process.client && window.location.href,
+      cancelURL: process.client && window.location.href,
     };
   },
   methods: {
