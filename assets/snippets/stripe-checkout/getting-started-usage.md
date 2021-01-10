@@ -3,10 +3,10 @@
 </template>
 
 <script>
-import { StringCheckout } from '@vue-stripe/vue-stripe';
+import { StripeCheckout } from '@vue-stripe/vue-stripe';
 export default {
   components: {
-    StringCheckout,
+    StripeCheckout,
   },
 };
 </script>
