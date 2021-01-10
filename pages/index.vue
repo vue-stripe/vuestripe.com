@@ -27,6 +27,9 @@
           color="primary"
           outlined
           rounded
+          href="https://github.com/vue-stripe/vue-stripe"
+          rel="noreferrer noopener"
+          target="_blank"
           :block="$isMobile"
         ).mx-1.my-1.text-none GitHub
         v-btn(
@@ -34,6 +37,9 @@
           color="primary"
           outlined
           rounded
+          href="https://opencollective.com/vue-stripe-checkout"
+          rel="noreferrer noopener"
+          target="_blank"
           :block="$isMobile"
         ).mx-1.my-1.text-none Open Collective
         v-btn(
