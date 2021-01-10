@@ -49,9 +49,14 @@
           template(v-slot:activator)
             v-list-item-title Vue Stripe Elements
           template(v-for="menu in stripeElementsMenus")
-            v-list-item(:to="{ name: menu.route }")
-              v-list-item-content
-                v-list-item-title.pl-3 {{menu.name}}
+            template(v-if="menu.route")
+              v-list-item(:to="{ name: menu.route }")
+                v-list-item-content
+                  v-list-item-title.pl-3 {{menu.name}}
+            template(v-else)
+              v-list-item(disabled)
+                v-list-item-content
+                  v-list-item-title.pl-3 {{menu.name}} #[small #[i Coming Soon]]
     v-content.mb-10
       nuxt
     author-footer
@@ -102,12 +107,42 @@ export default {
           route: 'stripe-elements-getting-started',
         },
         {
+          name: 'Elements Plugin',
+          route: 'stripe-elements-plugin',
+        },
+        {
           name: 'Card',
           route: 'stripe-elements-card',
         },
         {
-          name: 'Elements Plugin',
-          route: 'stripe-elements-plugin',
+          name: 'Card Number',
+        },
+        {
+          name: 'Card Expiry',
+        },
+        {
+          name: 'Card CVC',
+        },
+        {
+          name: 'FPX Bank',
+        },
+        {
+          name: 'Iban',
+        },
+        {
+          name: 'Ideal Bank',
+        },
+        {
+          name: 'P24 Bank',
+        },
+        {
+          name: 'EPS Bank',
+        },
+        {
+          name: 'Payment Request Button',
+        },
+        {
+          name: 'AU Bank Account',
         },
         // {
         //   name: 'FAQs',
