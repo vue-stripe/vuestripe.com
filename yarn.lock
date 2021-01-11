@@ -1409,10 +1409,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vue-stripe/vue-stripe@4.0.0-beta.3":
-  version "4.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@vue-stripe/vue-stripe/-/vue-stripe-4.0.0-beta.3.tgz#d2309297e365265e81ba0c050360725e64cacdae"
-  integrity sha512-USaX+GG8qEfDzl+ncRd8zW/hVRlcDfSvrh7mtRHD+Y1uPWBgHRAI86svHICYoosW1lfnsOG1fwLoDcotEAeoHQ==
+"@vue-stripe/vue-stripe@^4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@vue-stripe/vue-stripe/-/vue-stripe-4.0.2.tgz#b55cb82aae4653b65a2bda5d35f7db3ac8467440"
+  integrity sha512-uH1A3ROqp1NyycH1Wr/Dk50xYTp6ai2TrZQKgZJ14GeM3mPKmHzTzvaT4AX/uTd3QzSKp38yLdTHxM1qiGIT8Q==
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.0.0":
   version "1.0.0"
