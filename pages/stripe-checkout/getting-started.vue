@@ -4,6 +4,9 @@
       v-col(cols="12" md="10")
         h1.mb-5 Getting Started
         page-alert(content="Vue Stripe is an easy to implement, and well maintained Vue.js plugin for Stripe Checkout, and Elements.")
+        ads(
+          ad-slot="6748114630"
+        )
       v-col(cols="12" md="10")
         h1.mb-5 Installation
         v-card
@@ -67,6 +70,7 @@
 
 <script>
 import headMeta from '~/utils/head-meta';
+import Ads from '~/components/commons/ads';
 import CodeSnip from '~/components/commons/code-snippet';
 import PageAlert from '~/components/commons/page-alert';
 import IconLink from '~/components/commons/icon-link';
@@ -76,6 +80,7 @@ import checkoutEvents from '~/assets/fixtures/checkout-events.json';
 export default {
   layout: 'docs',
   components: {
+    Ads,
     CodeSnip,
     PageAlert,
     IconLink,
