@@ -7,6 +7,7 @@ export default {
     NODE_ENV: process.env.NODE_ENV,
     GA_ID: process.env.GA_ID,
     STRIPE_PK: process.env.STRIPE_PK,
+    ADSENSE_CA_PUB: process.env.ADSENSE_CA_PUB,
   },
   /*
   ** Headers of the page
@@ -70,7 +71,12 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     'nuxt-webfontloader',
+    ['@nuxtjs/google-adsense']
   ],
+  // Google Adsense
+  'google-adsense': {
+    id: process.env.ADSENSE_CA_PUB,
+  },
   /**
    * Google Web Fonts
    */
