@@ -55,6 +55,16 @@
         h1.mb-5 3. Redirect to checkout
         p Follow the Vue Stripe Checkout example below:
         code-snip(lang="language-html") {{recurringPaymentSnippet}}
+    v-dialog(v-model="redirectDialog" width="400")
+      v-card
+        v-card-text(v-if="redirectState === 'success'").pa-10.text-center
+          v-icon(style="font-size: 40px;").success--text mdi-check
+          h2 Success!
+          p Checkout process went through!
+        v-card-text(v-if="redirectState === 'cancel'").pa-10.text-center
+          v-icon(style="font-size: 40px;").error--text mdi-close
+          h2 Error!
+          p Checkout process didn't go through!
 </template>
 
 <script>
@@ -75,10 +85,23 @@ export default {
     this.pk = process.env.STRIPE_PK;
     return {
       loading: false,
+      redirectDialog: false,
+      redirectState: '',
       lineItems: [],
-      successURL: process.client && window.location.href,
-      cancelURL: process.client && window.location.href,
+      successURL: process.client && `${window.location.origin}${window.location.pathname}?state=success`,
+      cancelURL: process.client && `${window.location.origin}${window.location.pathname}?state=cancel`,
     };
+  },
+  mounted () {
+    const { state } = this.$route.query;
+    if (state === 'success') {
+      this.redirectState = 'success';
+      this.redirectDialog = true;
+    }
+    if (state === 'cancel') {
+      this.redirectState = 'cancel';
+      this.redirectDialog = true;
+    }
   },
   methods: {
     subscribe (tier) {
