@@ -24,12 +24,13 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/icons/favicon.ico' },
     ],
     script: [
-      { src: 'https://js.stripe.com/v3' },
+      { src: 'https://js.stripe.com/v3', ssr: false },
       {
         type: 'text/javascript',
         src: '//cdn.carbonads.com/carbon.js?serve=CEBIEK3Y&placement=vuestripecom',
         id: '_carbonads_js',
         async: true,
+        ssr: false,
       },
     ],
   },
