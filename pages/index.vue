@@ -1,11 +1,15 @@
 <template lang="pug">
   v-container(fill-height)
+    div(v-if="!$isMobile" style="position: absolute; top: 10px; left: 10px; width: 130px;")
+      carbon-ads
     v-row(justify="center" align="center")
       v-col(cols="12" md="12").text-center
-        img(width="250" src="../assets/images/vue-stripe-logo-variant-1-small.png")
-        h1 Vue #[span.primary--text Stripe] 💳
+        img(:width="$isMobile ? '150' : '250'" src="../assets/images/vue-stripe-logo-variant-1-small.png")
+        h1(:style="{ 'font-size': $isMobile ? '40px' : '70px' }") Vue #[span.primary--text Stripe] 💳
         h2 Stripe Checkout & Elements for Vue.js
         br
+        template(v-if="$isMobile")
+          carbon-ads
         v-btn(
           x-large
           color="primary"

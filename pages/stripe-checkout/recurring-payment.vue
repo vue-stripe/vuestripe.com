@@ -4,6 +4,7 @@
       v-col(cols="12" md="10")
         h1.mb-5 Recurring Payment
         page-alert(content="Vue Stripe Checkout also supports subscription or recurring payments.")
+        carbon-ads
       v-col(cols="12" md="10")
         h1.mb-5 Live Demo
         p Subscribe to Centipede Gaming Channel

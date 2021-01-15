@@ -4,6 +4,7 @@
       v-col(cols="12" md="10")
         h1.mb-5 Nuxt Demo
         page-alert(content="Vue Stripe Checkout can also be implemented with Nuxt.js")
+        carbon-ads
       v-col(cols="12" md="10")
         h1.mb-5 Helpful Links
         v-card

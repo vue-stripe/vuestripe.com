@@ -4,6 +4,7 @@
       v-col(cols="12" md="10")
         h1.mb-5 One-time Payment
         page-alert(content="Vue Stripe Checkout also supports one-time card payments.")
+        carbon-ads
       v-col(cols="12" md="10")
         h1.mb-5 Live Demo
         p This one T-shirt product has two prices, $20 USD and €15 Euro.

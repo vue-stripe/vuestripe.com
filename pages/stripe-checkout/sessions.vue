@@ -5,6 +5,7 @@
         h1.mb-5 Sessions
         page-alert(content="Vue Stripe Checkout also supports checkout using Session Id.")
         p Take note that #[code Session] ids are generate from the backend. To know more about sessions visit the #[new-win(link="https://stripe.com/docs/api/checkout/sessions") documentation].
+        carbon-ads
       v-col(cols="12" md="10")
         h1.mb-5 1. Create a session
         p You need to create the session in your backend. This session will return an #[code id], use that id to checkout the payment.

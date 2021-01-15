@@ -4,6 +4,7 @@
       v-col(cols="12" md="10")
         h1.mb-5 Getting Started
         page-alert(content="Vue Stripe is an easy to implement, and well maintained Vue.js plugin for Stripe Checkout, and Elements.")
+        carbon-ads
       v-col(cols="12" md="10")
         h1.mb-5 Installation
         v-card

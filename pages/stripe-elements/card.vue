@@ -4,6 +4,7 @@
       v-col(cols="12" md="10")
         h1.mb-1 Card
         page-alert(content="The Card Element lets you collect card information all within one Element. It includes a dynamically-updating card brand icon as well as inputs for number, expiry, CVC, and postal code. Get started with accepting a payment.")
+        carbon-ads
       v-col(cols="12" md="10")
         h1.mb-5 Live Demo
         p This one T-shirt product has two prices, $20 USD and €15 Euro.
