@@ -29,6 +29,8 @@ jobs:
           GA_ID: ${{ secrets.PROD_GA_ID }}
           STRIPE_PK: ${{ secrets.STRIPE_PK }}
           ADSENSE_CA_PUB: ${{ secrets.ADSENSE_CA_PUB }}
+          CA_SERVE: ${{ secrets.CA_SERVE }}
+          CA_PLACEMENT: ${{ secrets.CA_PLACEMENT }}
         run: yarn generate
       - name: Run deploy
         env: 
