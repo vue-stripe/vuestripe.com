@@ -25,6 +25,12 @@ export default {
     ],
     script: [
       { src: 'https://js.stripe.com/v3' },
+      {
+        type: 'text/javascript',
+        src: '//cdn.carbonads.com/carbon.js?serve=CEBIEK3Y&placement=vuestripecom',
+        id: '_carbonads_js',
+        async: true,
+      },
     ],
   },
   /*
