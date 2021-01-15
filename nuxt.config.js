@@ -1,5 +1,3 @@
-import webpack from 'webpack';
-
 export default {
   mode: 'universal',
   env: {
@@ -8,6 +6,8 @@ export default {
     GA_ID: process.env.GA_ID,
     STRIPE_PK: process.env.STRIPE_PK,
     ADSENSE_CA_PUB: process.env.ADSENSE_CA_PUB,
+    CA_SERVE: process.env.CA_SERVE,
+    CA_PLACEMENT: process.env.CA_PLACEMENT,
   },
   /*
   ** Headers of the page
@@ -25,12 +25,6 @@ export default {
     ],
     script: [
       { src: 'https://js.stripe.com/v3' },
-      {
-        type: 'text/javascript',
-        src: '//cdn.carbonads.com/carbon.js?serve=CEBIEK3Y&placement=vuestripecom',
-        id: '_carbonads_js',
-        async: true,
-      },
     ],
   },
   /*
@@ -52,10 +46,8 @@ export default {
     { src: '~/plugins/media-screen.js', mode: 'client', ssr: false },
     { src: '~/plugins/vue-analytics.js', mode: 'client', ssr: false },
     { src: '~/plugins/vue-media-query-mixin.js', mode: 'client', ssr: false },
-    {
-      src: '~/plugins/vue-stripe.js',
-      ssr: false,
-    },
+    { src: '~/plugins/vue-stripe.js', ssr: false },
+    { src: '~/plugins/carbon-ads.js', ssr: false },
   ],
   /*
   ** Nuxt.js dev-modules
