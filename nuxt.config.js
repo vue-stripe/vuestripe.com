@@ -78,12 +78,12 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     'nuxt-webfontloader',
-    ['@nuxtjs/google-adsense']
+    // ['@nuxtjs/google-adsense']
   ],
   // Google Adsense
-  'google-adsense': {
-    id: process.env.ADSENSE_CA_PUB,
-  },
+  // 'google-adsense': {
+  //   id: process.env.ADSENSE_CA_PUB,
+  // },
   /**
    * Google Web Fonts
    */
