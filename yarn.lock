@@ -1409,7 +1409,7 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vue-stripe/vue-stripe@^4.0.2":
+"@vue-stripe/vue-stripe@^4.0.3":
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/@vue-stripe/vue-stripe/-/vue-stripe-4.0.3.tgz#4d503434857757fdaeb848f1efd7027f1d58212b"
   integrity sha512-+GoKNZ4Hf02LIKNCBui86RvJnzsWjGun+lMLhEr+hYI2NT7OsiKgPJe9fkjUYfemlmD5yASBfVI1n24B+HqIDw==
