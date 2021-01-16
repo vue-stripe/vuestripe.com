@@ -1,17 +1,18 @@
 <template lang="pug">
-  v-container
-    v-row(justify="center")
-      v-col(cols="12" md="10")
-        h1.mb-5 Nuxt Demo
-        page-alert(content="Vue Stripe Checkout can also be implemented with Nuxt.js")
-        carbon-ads
-      v-col(cols="12" md="10")
-        h1.mb-5 Helpful Links
-        v-card
-          v-card-text
-            ul
-              template(v-for="link in links")
-                li {{link.name}} - #[a(:href="link.link" rel="noopener noreferrer") {{link.link}}]
+  v-row(justify="center")
+    v-col(cols="12")
+      h1.mb-5 Nuxt Demo
+      page-alert(content="Vue Stripe Checkout can also be implemented with Nuxt.js")
+    v-col(cols="12")
+      h1.mb-5 Helpful Links
+      v-card
+        v-card-text
+          ul
+            template(v-for="link in links")
+              li {{link.name}} - #[a(:href="link.link" rel="noopener noreferrer") {{link.link}}]
+    v-col(cols="12")
+      div(style="width: 130px;")
+        carbon-ads(v-if="$isMobile")
 </template>
 
 <script>

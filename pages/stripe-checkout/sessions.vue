@@ -1,19 +1,19 @@
 <template lang="pug">
-  v-container
-    v-row(justify="center")
-      v-col(cols="12" md="10")
-        h1.mb-5 Sessions
-        page-alert(content="Vue Stripe Checkout also supports checkout using Session Id.")
-        p Take note that #[code Session] ids are generate from the backend. To know more about sessions visit the #[new-win(link="https://stripe.com/docs/api/checkout/sessions") documentation].
-        carbon-ads
-      v-col(cols="12" md="10")
-        h1.mb-5 1. Create a session
-        p You need to create the session in your backend. This session will return an #[code id], use that id to checkout the payment.
-      v-col(cols="12" md="10")
-        h1.mb-5 2. Redirect to checkout
-        p Follow the Vue Stripe Checkout example below:
-        p You'll notice that when using sessions, you'll only need the #[code session-id]. This is because the session is the representation of all of the information (including success, and cacncel URLs) about the payment to be done.
-        code-snip(lang="language-html") {{sessionIdCheckoutSnippet}}
+  v-row(justify="center")
+    v-col(cols="12")
+      h1.mb-5 Sessions
+      page-alert(content="Vue Stripe Checkout also supports checkout using Session Id.")
+      p Take note that #[code Session] ids are generate from the backend. To know more about sessions visit the #[new-win(link="https://stripe.com/docs/api/checkout/sessions") documentation].
+      div(style="width: 130px;")
+        carbon-ads(v-if="$isMobile")
+    v-col(cols="12")
+      h1.mb-5 1. Create a session
+      p You need to create the session in your backend. This session will return an #[code id], use that id to checkout the payment.
+    v-col(cols="12")
+      h1.mb-5 2. Redirect to checkout
+      p Follow the Vue Stripe Checkout example below:
+      p You'll notice that when using sessions, you'll only need the #[code session-id]. This is because the session is the representation of all of the information (including success, and cacncel URLs) about the payment to be done.
+      code-snip(lang="language-html") {{sessionIdCheckoutSnippet}}
 </template>
 
 <script>

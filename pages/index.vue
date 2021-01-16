@@ -8,7 +8,7 @@
         h1(:style="{ 'font-size': $isMobile ? '40px' : '70px' }") Vue #[span.primary--text Stripe] 💳
         h2 Stripe Checkout & Elements for Vue.js
         br
-        template(v-if="$isMobile")
+        div(v-if="$isMobile" style="width: 130px;")
           carbon-ads
         v-btn(
           x-large

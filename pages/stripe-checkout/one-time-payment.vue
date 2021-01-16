@@ -1,64 +1,64 @@
 <template lang="pug">
-  v-container
-    v-row(justify="center")
-      v-col(cols="12" md="10")
-        h1.mb-5 One-time Payment
-        page-alert(content="Vue Stripe Checkout also supports one-time card payments.")
-        carbon-ads
-      v-col(cols="12" md="10")
-        h1.mb-5 Live Demo
-        p This one T-shirt product has two prices, $20 USD and €15 Euro.
-        v-col(cols="12" md="5")
-          v-card
-            v-card-text.text-center
-              img(width="200" src="~/assets/images/shirt.jpeg")
-              stripe-checkout(
-                ref="checkoutRef"
-                mode="payment"
-                :pk="pk"
-                :line-items="lineItems"
-                :success-url="successURL"
-                :cancel-url="cancelURL"
-                @loading="v => loading = v"
-              )
-            v-card-actions
-              v-spacer
-              v-btn(
-                depressed
-                color="primary"
-                :loading="loading"
-                :disabled="loading"
-                @click="payUSD"
-              ).text-none Pay $20 USD
-              v-btn(
-                depressed
-                color="accent"
-                :loading="loading"
-                :disabled="loading"
-                @click="payEuro"
-              ).text-none.black--text Pay €15 Euro
-              v-spacer
-      v-col(cols="12" md="10")
-        h1.mb-5 1. Enable Checkout
-        p You must first enable the client-only integration settings in your Stripe dashboard, you also have the option to customize the look and feel of your checkout page. #[new-win(link="https://stripe.com/docs/payments/checkout/client#enable-checkout") More details].
-      v-col(cols="12" md="10")
-        h1.mb-5 2. Create products and prices
-        p Product, and Price are required to make this work. Whether it's a physical item, or a service, it needs to be represented by a product. Each product can have one or more prices.
-        p For example, you can create a T-shirt product, with different prices for different currencies. $20 USD and €15 Euro. #[new-win(link="https://stripe.com/docs/payments/checkout/client#create-products-and-prices") More details].
-      v-col(cols="12" md="10")
-        h1.mb-5 3. Redirect to checkout
-        p Follow the Vue Stripe Checkout example below:
-        code-snip(lang="language-html") {{oneTimePaymentSnippet}}
-    v-dialog(v-model="redirectDialog" width="400")
-      v-card
-        v-card-text(v-if="redirectState === 'success'").pa-10.text-center
-          v-icon(style="font-size: 40px;").success--text mdi-check
-          h2 Success!
-          p Checkout process went through!
-        v-card-text(v-if="redirectState === 'cancel'").pa-10.text-center
-          v-icon(style="font-size: 40px;").error--text mdi-close
-          h2 Error!
-          p Checkout process didn't go through!
+  v-row(justify="center")
+    v-col(cols="12")
+      h1.mb-5 One-time Payment
+      page-alert(content="Vue Stripe Checkout also supports one-time card payments.")
+      div(style="width: 130px;")
+        carbon-ads(v-if="$isMobile")
+    v-col(cols="12")
+      h1.mb-5 Live Demo
+      p This one T-shirt product has two prices, $20 USD and €15 Euro.
+      v-col(cols="12" md="6").pa-0
+        v-card
+          v-card-text.text-center
+            img(width="200" src="~/assets/images/shirt.jpeg")
+            stripe-checkout(
+              ref="checkoutRef"
+              mode="payment"
+              :pk="pk"
+              :line-items="lineItems"
+              :success-url="successURL"
+              :cancel-url="cancelURL"
+              @loading="v => loading = v"
+            )
+          v-card-actions
+            v-spacer
+            v-btn(
+              depressed
+              color="primary"
+              :loading="loading"
+              :disabled="loading"
+              @click="payUSD"
+            ).text-none Pay $20 USD
+            v-btn(
+              depressed
+              color="accent"
+              :loading="loading"
+              :disabled="loading"
+              @click="payEuro"
+            ).text-none.black--text Pay €15 Euro
+            v-spacer
+    v-col(cols="12")
+      h1.mb-5 1. Enable Checkout
+      p You must first enable the client-only integration settings in your Stripe dashboard, you also have the option to customize the look and feel of your checkout page. #[new-win(link="https://stripe.com/docs/payments/checkout/client#enable-checkout") More details].
+    v-col(cols="12")
+      h1.mb-5 2. Create products and prices
+      p Product, and Price are required to make this work. Whether it's a physical item, or a service, it needs to be represented by a product. Each product can have one or more prices.
+      p For example, you can create a T-shirt product, with different prices for different currencies. $20 USD and €15 Euro. #[new-win(link="https://stripe.com/docs/payments/checkout/client#create-products-and-prices") More details].
+    v-col(cols="12")
+      h1.mb-5 3. Redirect to checkout
+      p Follow the Vue Stripe Checkout example below:
+      code-snip(lang="language-html") {{oneTimePaymentSnippet}}
+  v-dialog(v-model="redirectDialog" width="400")
+    v-card
+      v-card-text(v-if="redirectState === 'success'").pa-10.text-center
+        v-icon(style="font-size: 40px;").success--text mdi-check
+        h2 Success!
+        p Checkout process went through!
+      v-card-text(v-if="redirectState === 'cancel'").pa-10.text-center
+        v-icon(style="font-size: 40px;").error--text mdi-close
+        h2 Error!
+        p Checkout process didn't go through!
 </template>
 
 <script>

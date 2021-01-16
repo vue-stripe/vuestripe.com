@@ -30,7 +30,6 @@
     v-navigation-drawer(
       v-model="drawer"
       app
-      width="350"
     )
       v-toolbar(flat)
         img(width="45" src="~/assets/images/vue-stripe-logo-variant-1-small.png")
@@ -58,8 +57,15 @@
               v-list-item(disabled)
                 v-list-item-content
                   v-list-item-title.pl-3 {{menu.name}} #[small #[i Coming Soon]]
-    v-content.mb-10
-      nuxt
+    v-content
+      v-container
+        v-row(justify="center")
+          v-col(v-if="!$isMobile" cols="12" md="2").pt-9
+            div(style="position: fixed; width: 130px;")
+              carbon-ads
+          v-col(cols="12" md="8")
+            nuxt
+          v-col(cols="12" md="2")
     author-footer
 </template>
 
