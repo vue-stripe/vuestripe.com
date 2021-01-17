@@ -70,6 +70,7 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     'nuxt-webfontloader',
+    '@nuxtjs/axios',
     // ['@nuxtjs/google-adsense']
   ],
   // Google Adsense
