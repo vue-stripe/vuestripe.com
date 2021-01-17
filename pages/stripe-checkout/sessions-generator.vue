@@ -12,13 +12,18 @@
       code-snip(lang="language-javascript") {{sessionPayload}}
     v-col(cols="12")
       h1.mb-5 2. Create a session #[v-chip.success backend]
-      p Create a session using the data from Step 1. Note that the #[code "mode"="payment"] means that you are creating a one-time payment session.
+      p Create a session using the data from Step 1. Note that the #[code "mode"="payment"] means that you are creating a one-time payment session. #[a(href="https://github.com/vue-stripe/vue-stripe-functions" target="_blank" rel="noreferrer noopener") Node.js sample here].
       v-btn(
         color="primary"
         large
         depressed
+        :disabled="sessionLoading"
+        :loading="sessionLoading"
         @click="createSession"
       ).text-none Create Session
+      template(v-if="session")
+        p.mt-5 Congrats! Here's your session id. Copy this to the checkout field below.
+        code-snip(lang="language-javascript") {{session.id}}
     v-col(cols="12")
       h1.mb-5 3. Checkout using session id #[v-chip.primary frontend]
       stripe-checkout(
@@ -39,12 +44,26 @@
         :disabled="!sessionId"
         @click="$refs.checkoutRef.redirectToCheckout()"
       ).text-none Checkout Using Session
+    v-col(cols="12")
+      b Sample Code
+      code-snip(lang="language-html") {{sessionIdCheckoutSnippet}}
+    v-dialog(v-model="redirectDialog" width="400")
+      v-card
+        v-card-text(v-if="redirectState === 'success'").pa-10.text-center
+          v-icon(style="font-size: 40px;").success--text mdi-check
+          h2 Success!
+          p Checkout process went through!
+        v-card-text(v-if="redirectState === 'cancel'").pa-10.text-center
+          v-icon(style="font-size: 40px;").error--text mdi-close
+          h2 Error!
+          p Checkout process didn't go through!
 </template>
 
 <script>
 import headMeta from '~/utils/head-meta';
 import CodeSnip from '~/components/commons/code-snippet';
 import PageAlert from '~/components/commons/page-alert';
+import sessionIdCheckoutSnippet from '~/assets/snippets/stripe-checkout/session-id-checkout.md';
 export default {
   layout: 'docs',
   components: {
@@ -53,8 +72,10 @@ export default {
   },
   data () {
     this.pk = process.env.STRIPE_PK;
+    this.sessionIdCheckoutSnippet = sessionIdCheckoutSnippet;
     return {
       sessionLoading: false,
+      redirectDialog: false,
       sessionPayload: {
         success_url: process.client && `${window.location.origin}${window.location.pathname}?state=success`,
         cancel_url: process.client && `${window.location.origin}${window.location.pathname}?state=cancel`,
@@ -79,18 +100,27 @@ export default {
       return process.client && `${window.location.origin}${window.location.pathname}?state=cancel`;
     },
   },
+  mounted () {
+    const { state } = this.$route.query;
+    if (state === 'success') {
+      this.redirectState = 'success';
+      this.redirectDialog = true;
+    }
+    if (state === 'cancel') {
+      this.redirectState = 'cancel';
+      this.redirectDialog = true;
+    }
+  },
   methods: {
     async createSession () {
       try {
         this.sessionLoading = true;
-        this.session = await fetch(`${process.env.API_URL}/sessions`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: this.sessionPayload,
+        const { data } = await this.$axios({
+          method: 'post',
+          url: `${process.env.API_URL}/sessions`,
+          data: this.sessionPayload,
         });
-        console.warn(this.session);
+        this.session = data;
       } catch (e) {
         console.error(e);
       } finally {
