@@ -65,7 +65,7 @@
               carbon-ads
           v-col(cols="12" md="8")
             nuxt
-          v-col(cols="12" md="2")
+          v-col(v-if="!$isMobile" cols="12" md="2")
     author-footer
 </template>
 
@@ -98,6 +98,10 @@ export default {
         {
           name: 'Sessions',
           route: 'stripe-checkout-sessions',
+        },
+        {
+          name: 'Sessions Generator',
+          route: 'stripe-checkout-sessions-generator',
         },
         // {
         //   name: 'FAQs',
