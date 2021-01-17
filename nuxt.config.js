@@ -1,13 +1,14 @@
 export default {
   mode: 'universal',
   env: {
-    ENV: process.env.ENV,
-    NODE_ENV: process.env.NODE_ENV,
-    GA_ID: process.env.GA_ID,
-    STRIPE_PK: process.env.STRIPE_PK,
     ADSENSE_CA_PUB: process.env.ADSENSE_CA_PUB,
-    CA_SERVE: process.env.CA_SERVE,
+    API_URL: process.env.API_URL,
     CA_PLACEMENT: process.env.CA_PLACEMENT,
+    CA_SERVE: process.env.CA_SERVE,
+    ENV: process.env.ENV,
+    GA_ID: process.env.GA_ID,
+    NODE_ENV: process.env.NODE_ENV,
+    STRIPE_PK: process.env.STRIPE_PK,
   },
   /*
   ** Headers of the page

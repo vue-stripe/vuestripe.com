@@ -25,12 +25,13 @@ jobs:
         run: yarn
       - name: Run build
         env: 
-          NODE_ENV: production
-          GA_ID: ${{ secrets.PROD_GA_ID }}
-          STRIPE_PK: ${{ secrets.STRIPE_PK }}
           ADSENSE_CA_PUB: ${{ secrets.ADSENSE_CA_PUB }}
-          CA_SERVE: ${{ secrets.CA_SERVE }}
+          API_URL: ${{ secrets.API_URL }}
           CA_PLACEMENT: ${{ secrets.CA_PLACEMENT }}
+          CA_SERVE: ${{ secrets.CA_SERVE }}
+          GA_ID: ${{ secrets.PROD_GA_ID }}
+          NODE_ENV: production
+          STRIPE_PK: ${{ secrets.STRIPE_PK }}
         run: yarn generate
       - name: Run deploy
         env: 
