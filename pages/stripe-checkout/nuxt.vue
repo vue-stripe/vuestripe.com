@@ -11,8 +11,7 @@
             template(v-for="link in links")
               li {{link.name}} - #[a(:href="link.link" rel="noopener noreferrer") {{link.link}}]
     v-col(cols="12")
-      div(style="width: 130px;")
-        carbon-ads(v-if="$isMobile")
+      carbon-ads(v-if="$isMobile")
 </template>
 
 <script>

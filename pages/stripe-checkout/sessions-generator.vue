@@ -4,8 +4,7 @@
       h1.mb-5 Sessions Generator
       page-alert(content="Interactive session generator to demo checkout using sessions.")
       p Take note that #[code Session] ids are generate from the backend. To know more about sessions visit the #[new-win(link="https://stripe.com/docs/api/checkout/sessions") documentation].
-      div(style="width: 130px;")
-        carbon-ads(v-if="$isMobile")
+      carbon-ads(v-if="$isMobile")
     v-col(cols="12")
       h1.mb-5 1. Prepare checkout data #[v-chip.primary frontend]
       p Prerequisite: #[router-link(:to="{ name: 'stripe-checkout-one-time-payment' }") Enable Checkout, and Create Products]
