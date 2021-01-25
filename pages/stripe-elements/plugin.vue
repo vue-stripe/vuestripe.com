@@ -5,8 +5,7 @@
       page-alert(content="Vue.js plugin for Stripe, and Stripe Elements")
       p Since not all of the Stripe Elements types are supported yet, I decided to expose the Stripe, and Elements via Vue prototype. This will give you full control over the usage of Stripe object, and Stripe Elements instance.
       p You can use this without using the other Vue Stripe components.
-      div(style="width: 130px;")
-        carbon-ads(v-if="$isMobile")
+      carbon-ads(v-if="$isMobile")
     v-col(cols="12")
       h1.mb-5 Install
       p Add the Stripe js sdk in the html head.

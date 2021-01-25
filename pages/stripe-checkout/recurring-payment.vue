@@ -3,8 +3,7 @@
     v-col(cols="12")
       h1.mb-5 Recurring Payment
       page-alert(content="Vue Stripe Checkout also supports subscription or recurring payments.")
-      div(style="width: 130px;")
-        carbon-ads(v-if="$isMobile")
+      carbon-ads(v-if="$isMobile")
     v-col(cols="12")
       h1.mb-5 Live Demo
       p Subscribe to Centipede Gaming Channel
