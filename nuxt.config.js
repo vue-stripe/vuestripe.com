@@ -1,3 +1,5 @@
+const path = require('path');
+
 export default {
   mode: 'universal',
   env: {
@@ -126,6 +128,13 @@ export default {
       config.module.rules.push({
         test: /\.md$/i,
         loader: 'raw-loader',
+      });
+      config.module.rules.push({
+        test: /\.js$/,
+        enforce: 'pre',
+        use: 'eslint-loader',
+        include: path.resolve(__dirname), // <-- This tell to eslint to look only in your project folder
+        exclude: /node_modules/
       });
       // Sets webpack's mode to development if `isDev` is true.
       if (isDev) {
