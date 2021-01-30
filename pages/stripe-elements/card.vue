@@ -48,10 +48,9 @@
       p Below is an example on how to use #[code StripeElementCard] to generate a token.
       code-snip(lang="language-html") {{cardSampleSnippet}}
     v-col(cols="12")
-      h1.mb-5 3. Props & Events
+      h1.mb-5 Props
       v-card
         v-card-text
-          h2.mb-2 Props
           div(style="overflow-x: auto;")
             table(width="100%")
               thead
@@ -74,6 +73,31 @@
                     td {{prop.default}}
                     td {{prop.required}}
                     td(v-html="prop.description")
+    v-col(cols="12")
+      h1.mb-5 Methods
+      p You can access thes methods via #[code $refs], like so #[code this.$refs.elementRef.destroy()].
+      v-card
+        v-card-text
+          div(style="overflow-x: auto;")
+            table(width="100%")
+              thead
+                tr(align="left")
+                  th(width="180") Name
+                  th Return Type
+                  th Description
+              tbody
+                template(v-for="method in cardMethods")
+                  tr
+                    td {{method.name}}
+                      icon-link(
+                        v-if="method.link"
+                        :link="method.link"
+                      )
+                    td {{method.type}}
+                    td(v-html="method.description")
+    v-col(cols="12")
+      h1.mb-5 Events
+      v-card
         v-card-text
           div(style="overflow-x: auto;")
             table(width="100%")
@@ -96,6 +120,7 @@ import PageAlert from '~/components/commons/page-alert';
 import CodeSnip from '~/components/commons/code-snippet';
 import IconLink from '~/components/commons/icon-link';
 import cardProps from '~/assets/fixtures/element-card-props.json';
+import cardMethods from '~/assets/fixtures/element-card-methods.json';
 import cardEvents from '~/assets/fixtures/element-card-events.json';
 import cardUsageSnippet from '~/assets/snippets/stripe-elements/card-usage.md';
 import cardSampleSnippet from '~/assets/snippets/stripe-elements/card-sample.md';
@@ -111,6 +136,7 @@ export default {
     this.cardUsageSnippet = cardUsageSnippet;
     this.cardSampleSnippet = cardSampleSnippet;
     this.cardProps = cardProps;
+    this.cardMethods = cardMethods;
     this.cardEvents = cardEvents;
     return {
       loading: false,
