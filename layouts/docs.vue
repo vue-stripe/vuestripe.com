@@ -30,21 +30,36 @@
     v-navigation-drawer(
       v-model="drawer"
       app
+      width="300"
     )
       v-toolbar(flat)
         img(width="45" src="~/assets/images/vue-stripe-logo-variant-1-small.png")
         h2 Vue #[span.primary--text Stripe]
       v-list
         v-list-item(to="/")
+          v-list-item-icon.mr-2
+            v-icon mdi-home
           v-list-item-content
             v-list-item-title Home
+        v-list-item(color="primary" :to="{ name: 'nuxt' }")
+          v-list-item-icon.mr-2
+            v-icon mdi-nuxt
+          v-list-item-content
+            v-list-item-title Vue Stripe with Nuxt.js
+        v-list-group(:value="true")
+          template(v-slot:activator)
+            v-list-item-title Vue Stripe Plugin #[v-icon.red--text mdi-new-box]
+          template(v-for="menu in stripePluginMenus")
+            v-list-item(:to="{ name: menu.route }")
+              v-list-item-content
+                v-list-item-title.pl-3 {{menu.name}} #[v-icon(v-if="menu.isNew").red--text mdi-new-box]
         v-list-group(:value="true")
           template(v-slot:activator)
             v-list-item-title Vue Stripe Checkout
           template(v-for="menu in stripeCheckoutMenus")
             v-list-item(:to="{ name: menu.route }")
               v-list-item-content
-                v-list-item-title.pl-3 {{menu.name}}
+                v-list-item-title.pl-3 {{menu.name}} #[v-icon(v-if="menu.isNew").red--text mdi-new-box]
         v-list-group(:value="true")
           template(v-slot:activator)
             v-list-item-title Vue Stripe Elements
@@ -52,7 +67,7 @@
             template(v-if="menu.route")
               v-list-item(:to="{ name: menu.route }")
                 v-list-item-content
-                  v-list-item-title.pl-3 {{menu.name}}
+                  v-list-item-title.pl-3 {{menu.name}} #[v-icon(v-if="menu.isNew").red--text mdi-new-box]
             template(v-else)
               v-list-item(disabled)
                 v-list-item-content
@@ -78,14 +93,16 @@ export default {
   data () {
     return {
       drawer: null,
+      stripePluginMenus: [
+        {
+          name: 'Getting Started',
+          route: 'stripe-plugin-getting-started',
+        },
+      ],
       stripeCheckoutMenus: [
         {
           name: 'Getting Started',
           route: 'stripe-checkout-getting-started',
-        },
-        {
-          name: 'Nuxt.js',
-          route: 'stripe-checkout-nuxt',
         },
         {
           name: 'One-time Payment',
@@ -102,6 +119,11 @@ export default {
         {
           name: 'Sessions Generator',
           route: 'stripe-checkout-sessions-generator',
+        },
+        {
+          name: 'Google & Apply Pay',
+          route: 'stripe-checkout-google-and-apple-pay',
+          isNew: true,
         },
         // {
         //   name: 'FAQs',
