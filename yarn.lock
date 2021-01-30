@@ -1439,10 +1439,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vue-stripe/vue-stripe@^4.0.3":
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/@vue-stripe/vue-stripe/-/vue-stripe-4.0.3.tgz#4d503434857757fdaeb848f1efd7027f1d58212b"
-  integrity sha512-+GoKNZ4Hf02LIKNCBui86RvJnzsWjGun+lMLhEr+hYI2NT7OsiKgPJe9fkjUYfemlmD5yASBfVI1n24B+HqIDw==
+"@vue-stripe/vue-stripe@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@vue-stripe/vue-stripe/-/vue-stripe-4.1.0.tgz#87d5be1a0bd98711b8eb42b5aedcb5fc42f04e24"
+  integrity sha512-1p/UzHAWZ1Z7NK1qDlHgteTAemOMl9CDSQfiy60ncCJpWBUWcVreaSPkX308FSRRVBaDhxv31nYP0R+0UMU1Eg==
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.0.0":
   version "1.0.0"
@@ -10308,11 +10308,6 @@ vue-server-renderer@^2.6.11:
     resolve "^1.2.0"
     serialize-javascript "^2.1.2"
     source-map "0.5.6"
-
-vue-stripe-checkout@^3.5.14-beta.0:
-  version "3.5.14-beta.0"
-  resolved "https://registry.yarnpkg.com/vue-stripe-checkout/-/vue-stripe-checkout-3.5.14-beta.0.tgz#cabddd8172f7630f03e8a3ea5edb56e2cfd7e213"
-  integrity sha512-NOnZZupLdhAstEWSE7P/OLT7vuoDT8EFSPbv5sA0bi8mHsyFRAhSaoVHQBNQj0vqLH8k8Yt2dPj+PSvVY+JffA==
 
 vue-style-loader@^4.1.0:
   version "4.1.2"
