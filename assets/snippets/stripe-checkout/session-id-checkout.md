@@ -22,9 +22,11 @@ export default {
       sessionId: 'session-id', // session id from backend
     };
   },
-  // You will be redirected to Stripe's secure checkout page
-  submit () {
-    this.$refs.checkoutRef.redirectToCheckout();
+  methods: {
+    submit () {
+      // You will be redirected to Stripe's secure checkout page
+      this.$refs.checkoutRef.redirectToCheckout();
+    },
   },
 };
 </script>

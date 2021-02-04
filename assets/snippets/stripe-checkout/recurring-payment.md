@@ -35,9 +35,9 @@ export default {
   },
   methods: {
     submit () {
-    // You will be redirected to Stripe's secure checkout page
+      // You will be redirected to Stripe's secure checkout page
       this.$refs.checkoutRef.redirectToCheckout();
     },
-  }
+  },
 };
 </script>
