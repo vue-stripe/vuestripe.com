@@ -1440,9 +1440,11 @@
     tsutils "^3.17.1"
 
 "@vue-stripe/vue-stripe@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@vue-stripe/vue-stripe/-/vue-stripe-4.1.0.tgz#87d5be1a0bd98711b8eb42b5aedcb5fc42f04e24"
-  integrity sha512-1p/UzHAWZ1Z7NK1qDlHgteTAemOMl9CDSQfiy60ncCJpWBUWcVreaSPkX308FSRRVBaDhxv31nYP0R+0UMU1Eg==
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@vue-stripe/vue-stripe/-/vue-stripe-4.1.1.tgz#37bd70e9d74a9a18566ee0c048a6aac17746a8e7"
+  integrity sha512-ME3U0kq/c8OuAYgYfcpqNUUPFlqvvVllI/TV813pwx+DzPtznTZNfQNT+3fbxPTJEV4r37yiqUPRo+3Kq2x3FQ==
+  dependencies:
+    vue-coerce-props "^1.0.0"
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.0.0":
   version "1.0.0"
@@ -10209,6 +10211,11 @@ vue-client-only@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/vue-client-only/-/vue-client-only-2.0.0.tgz#ddad8d675ee02c761a14229f0e440e219de1da1c"
   integrity sha512-arhk1wtWAfLsJyxGMoEYhoBowM87/i6HLSG2LH/03Yog6i2d9JEN1peMP0Ceis+/n9DxdenGYZZTxbPPJyHciA==
+
+vue-coerce-props@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/vue-coerce-props/-/vue-coerce-props-1.0.0.tgz#af3d00aa419f0de79c2b020824c6c0387070d66e"
+  integrity sha512-4fdRMXO6FHzmE7H4soAph6QmPg3sL/RiGdd+axuxuU07f02LNMns0jMM88fmt1bvSbN+2Wyd8raho6p6nXUzag==
 
 vue-eslint-parser@^7.0.0:
   version "7.0.0"
