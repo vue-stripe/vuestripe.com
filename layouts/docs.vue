@@ -46,6 +46,11 @@
             v-icon mdi-nuxt
           v-list-item-content
             v-list-item-title Vue Stripe with Nuxt.js
+        v-list-item(disabled)
+          v-list-item-icon.mr-2
+            v-icon mdi-currency-btc
+          v-list-item-content
+            v-list-item-title Payment Methods #[small #[i Coming Soon]]
         v-list-group(:value="true")
           template(v-slot:activator)
             v-list-item-title Vue Stripe Plugin #[v-icon.red--text mdi-new-box]
