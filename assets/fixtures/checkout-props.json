@@ -23,6 +23,14 @@
     "link": "https://stripe.com/docs/js/checkout/redirect_to_checkout#stripe_checkout_redirect_to_checkout-options-lineItems"
   },
   {
+    "name": "disableAdvancedFraudDetection",
+    "type": "boolean",
+    "default": "false",
+    "required": "no",
+    "description": "Disables the advanced fraud detection feature.",
+    "link": "https://stripe.com/docs/disputes/prevention/advanced-fraud-detection#disabling-advanced-fraud-detection"
+  },
+  {
     "name": "mode",
     "type": "string",
     "default": "none",

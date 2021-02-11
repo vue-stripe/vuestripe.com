@@ -15,6 +15,14 @@
     "link": "https://stripe.com/docs/js/elements_object/create#stripe_elements-options"
   },
   {
+    "name": "disableAdvancedFraudDetection",
+    "type": "boolean",
+    "default": "false",
+    "required": "no",
+    "description": "Disables the advanced fraud detection feature.",
+    "link": "https://stripe.com/docs/disputes/prevention/advanced-fraud-detection#disabling-advanced-fraud-detection"
+  },
+  {
     "name": "classes",
     "type": "object",
     "default": "none",
