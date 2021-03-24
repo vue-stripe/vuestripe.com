@@ -5,6 +5,7 @@
       :pk="pulishableKey"
       @token="tokenCreated"
     />
+    <button @click="submit">Generate token</button>
   </div>
 </template>
 
@@ -21,6 +22,10 @@ export default {
     };
   },
   method: {
+    submit () {
+      // this will trigger the process
+      this.$refs.elementRef.submit();
+    },
     tokenCreated (token) {
       console.log(token);
       // handle the token
