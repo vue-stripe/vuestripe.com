@@ -145,7 +145,7 @@ export default {
           route: 'stripe-elements-getting-started',
         },
         {
-          name: 'Elements Plugin',
+          name: 'Stripe Plugin',
           route: 'stripe-elements-plugin',
         },
         {
