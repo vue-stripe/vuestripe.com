@@ -1297,6 +1297,11 @@
     mustache "^2.3.0"
     stack-trace "0.0.10"
 
+"@stripe/stripe-js@^1.13.2":
+  version "1.13.2"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.13.2.tgz#bb2f561085b5dd091355df871d432b8e1fd467f6"
+  integrity sha512-fycUk7ECukNc31lD5apcrUgdRC1BfiIacs+CpacoCjOgo3ablolnWCvDQWMmVWtODYa8bBv2dlBla+Edc5OvZg==
+
 "@types/babel-types@*", "@types/babel-types@^7.0.0":
   version "7.0.7"
   resolved "https://registry.yarnpkg.com/@types/babel-types/-/babel-types-7.0.7.tgz#667eb1640e8039436028055737d2b9986ee336e3"
@@ -1439,11 +1444,12 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vue-stripe/vue-stripe@^4.1.7":
-  version "4.1.7"
-  resolved "https://registry.yarnpkg.com/@vue-stripe/vue-stripe/-/vue-stripe-4.1.7.tgz#36389e39582bce1fb5efc8be361f63719970b35e"
-  integrity sha512-+KT72t0UNDEWLVHA5wxO1OAMKl4XIrVqeFqUr0x+P6ZNZuQZA0h489EjBqxscjOocA6HtNHrvhzOFRBo3UFq9g==
+"@vue-stripe/vue-stripe@^4.1.8":
+  version "4.1.8"
+  resolved "https://registry.yarnpkg.com/@vue-stripe/vue-stripe/-/vue-stripe-4.1.8.tgz#3488457a1c7762bb3d02b80d195ce8747c215950"
+  integrity sha512-rc6+p6E9eMaUbulO8JCWwL3TTDLpmdK/h7ppEu9IlcKBecNbnoehi0UpA89cnsZZeswkvWNZNTf3l/xYjwKLdA==
   dependencies:
+    "@stripe/stripe-js" "^1.13.2"
     vue-coerce-props "^1.0.0"
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.0.0":
