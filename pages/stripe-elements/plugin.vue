@@ -1,18 +1,18 @@
 <template lang="pug">
   v-row(justify="center")
     v-col(cols="12")
-      h1.mb-1 Stripe Element Plugin
+      h1.mb-1 Stripe Plugin
       page-alert(content="Vue.js for Stripe Elements")
       p Since not all of the Stripe Elements types are supported yet, I decided to expose the Elements object via Vue prototype. This will give you full control over the usage Stripe Elements instance.
       p You can use this without using the other Vue Stripe components.
       carbon-ads(v-if="$isMobile")
     v-col(cols="12")
       h1.mb-5 Install
-      p Add the Stripe js sdk in the html head.
-      code-snip(lang="language-html") {{elementsPluginUsageAddSdk}}
-      p Import and register the #[code StripeElementsPlugin] plugin.
-      code-snip(lang="language-javascript") {{elementsPluginUsage}}
-      p This will give you access to #[code this.$stripeElements]. Where #[code this.$stripeElements] = #[code Stripe.elements()].
+      //- p Add the Stripe js sdk in the html head.
+      //- code-snip(lang="language-html") {{elementsPluginUsageAddSdk}}
+      p Import and register the #[code StripePlugin] plugin.
+      code-snip(lang="language-javascript") {{stripePluginUsage}}
+      p This will give you access to #[code this.$stripe]. Using this you can create now create an instance of Stripe Elements.
       p With this, you can now access the Elements methods like, #[code .create], #[code .getElement], and more. See #[a(src="https://stripe.com/docs/js/elements_object/create" rel="noreferrer noopener") here].
     v-col(cols="12")
       h1.mb-5 Use Case
@@ -50,8 +50,8 @@ import headMeta from '~/utils/head-meta';
 import PageAlert from '~/components/commons/page-alert';
 import CodeSnip from '~/components/commons/code-snippet';
 import elementsPluginUsageAddSdk from '~/assets/snippets/stripe-elements/plugin-usage-add-sdk.md';
-import elementsPluginUsage from '~/assets/snippets/stripe-elements/plugin-usage.md';
-import elementsPluginUsageSeparateElements from '~/assets/snippets/stripe-elements/plugin-usage-separate-elements.md';
+import stripePluginUsage from '~/assets/snippets/stripe-plugin/plugin-usage.md';
+import elementsPluginUsageSeparateElements from '~/assets/snippets/stripe-plugin/plugin-usage-separate-elements.md';
 export default {
   layout: 'docs',
   components: {
@@ -60,7 +60,7 @@ export default {
   },
   data () {
     this.elementsPluginUsageAddSdk = elementsPluginUsageAddSdk;
-    this.elementsPluginUsage = elementsPluginUsage;
+    this.stripePluginUsage = stripePluginUsage;
     this.elementsPluginUsageSeparateElements = elementsPluginUsageSeparateElements;
     return {
       tokenDialog: false,
@@ -69,6 +69,11 @@ export default {
       cardExpiry: null,
       cardCvc: null,
     };
+  },
+  computed: {
+    stripeElements () {
+      return this.$stripe.elements();
+    },
   },
   mounted () {
     const style = {
@@ -86,11 +91,11 @@ export default {
         iconColor: '#fa755a',
       },
     };
-    this.cardNumber = this.$stripeElements.create('cardNumber', { style });
+    this.cardNumber = this.stripeElements.create('cardNumber', { style });
     this.cardNumber.mount('#card-number');
-    this.cardExpiry = this.$stripeElements.create('cardExpiry', { style });
+    this.cardExpiry = this.stripeElements.create('cardExpiry', { style });
     this.cardExpiry.mount('#card-expiry');
-    this.cardCvc = this.$stripeElements.create('cardCvc', { style });
+    this.cardCvc = this.stripeElements.create('cardCvc', { style });
     this.cardCvc.mount('#card-cvc');
   },
   beforeDestroy () {
