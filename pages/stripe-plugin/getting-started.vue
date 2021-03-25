@@ -7,8 +7,8 @@
       carbon-ads(v-if="$isMobile")
     v-col(cols="12")
       h1.mb-5 Install
-      p Add the Stripe js sdk in the html head.
-      code-snip(lang="language-html") {{addStripeSdk}}
+      //- p Add the Stripe js sdk in the html head.
+      //- code-snip(lang="language-html") {{addStripeSdk}}
       p Import and register the #[code StripePlugin] plugin.
       code-snip(lang="language-javascript") {{elementsPluginUsage}}
       p This will give you access to #[code this.$stripe], Where #[code this.$stripe] = #[code window.Stripe(PUBLISHABLE_KEY, options)].
