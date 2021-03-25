@@ -21,6 +21,11 @@ export default {
       cardCvc: null,
     };
   },
+  computed: {
+    stripeElements () {
+      return this.$stripe.elements();
+    },
+  },
   mounted () {
     // Style Object documentation here: https://stripe.com/docs/js/appendix/style
     const style = {
@@ -38,11 +43,11 @@ export default {
         iconColor: '#fa755a',
       },
     };
-    this.cardNumber = this.$stripeElements.create('cardNumber', { style });
+    this.cardNumber = this.stripeElements.create('cardNumber', { style });
     this.cardNumber.mount('#card-number');
-    this.cardExpiry = this.$stripeElements.create('cardExpiry', { style });
+    this.cardExpiry = this.stripeElements.create('cardExpiry', { style });
     this.cardExpiry.mount('#card-expiry');
-    this.cardCvc = this.$stripeElements.create('cardCvc', { style });
+    this.cardCvc = this.stripeElements.create('cardCvc', { style });
     this.cardCvc.mount('#card-cvc');
   },
   beforeDestroy () {
