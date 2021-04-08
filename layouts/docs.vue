@@ -29,8 +29,8 @@
         v-icon.primary--text mdi-heart
     v-navigation-drawer(
       v-model="drawer"
-      app
       width="300"
+      app
     )
       v-toolbar(flat)
         img(width="45" src="~/assets/images/vue-stripe-logo-variant-1-small.png")
@@ -46,11 +46,7 @@
             v-icon mdi-nuxt
           v-list-item-content
             v-list-item-title Vue Stripe with Nuxt.js
-        v-list-item(disabled)
-          v-list-item-icon.mr-2
-            v-icon mdi-currency-btc
-          v-list-item-content
-            v-list-item-title Payment Methods #[small #[i Coming Soon]]
+        v-divider
         v-list-group(:value="true")
           template(v-slot:activator)
             v-list-item-title Vue Stripe Plugin #[v-icon.red--text mdi-new-box]
@@ -58,7 +54,7 @@
             v-list-item(:to="{ name: menu.route }")
               v-list-item-content
                 v-list-item-title.pl-3 {{menu.name}} #[v-icon(v-if="menu.isNew").red--text mdi-new-box]
-        v-list-group(:value="true")
+        v-list-group(:value="false")
           template(v-slot:activator)
             v-list-item-title Vue Stripe Checkout
           template(v-for="menu in stripeCheckoutMenus")
@@ -69,6 +65,18 @@
           template(v-slot:activator)
             v-list-item-title Vue Stripe Elements
           template(v-for="menu in stripeElementsMenus")
+            template(v-if="menu.route")
+              v-list-item(:to="{ name: menu.route }")
+                v-list-item-content
+                  v-list-item-title.pl-3 {{menu.name}} #[v-icon(v-if="menu.isNew").red--text mdi-new-box]
+            template(v-else)
+              v-list-item(disabled)
+                v-list-item-content
+                  v-list-item-title.pl-3 {{menu.name}} #[small #[i Coming Soon]]
+        v-list-group(:value="true")
+          template(v-slot:activator)
+            v-list-item-title Payment Methods
+          template(v-for="menu in paymentMethodsMenus")
             template(v-if="menu.route")
               v-list-item(:to="{ name: menu.route }")
                 v-list-item-content
@@ -102,6 +110,12 @@ export default {
         {
           name: 'Getting Started',
           route: 'stripe-plugin-getting-started',
+        },
+      ],
+      paymentMethodsMenus: [
+        {
+          name: 'Create a PaymentMethod',
+          route: 'payment-methods-create',
         },
       ],
       stripeCheckoutMenus: [
