@@ -7,7 +7,7 @@
     <label>Card CVC</label>
     <div id="card-cvc"></div>
     <div id="card-error"></div>
-    <button id="custom-button" @click="createToken")>Generate Token</button>
+    <button id="custom-button" @click="createToken">Generate Token</button>
   </div>
 </template>
 
