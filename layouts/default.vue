@@ -13,7 +13,7 @@ export default {
 
 <style scoped>
 #app {
-  font-family: 'Sniglet', cursive;
+  font-family: 'Open Sans', cursive;
   /* font-family: 'JetBrains Mono', monospace; */
   background-color: #FFD96A;
   color: #34495E;

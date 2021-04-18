@@ -198,7 +198,7 @@ export default {
 
 <style>
 #app {
-  font-family: 'Sniglet', cursive;
+  font-family: 'Open Sans', cursive;
   /* font-family: 'JetBrains Mono', monospace; */
   color: #34495E;
 }
