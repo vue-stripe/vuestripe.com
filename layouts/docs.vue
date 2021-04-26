@@ -153,6 +153,10 @@ export default {
           route: 'stripe-elements-card',
         },
         {
+          name: 'Payment Request Button',
+          route: 'stripe-elements-payment-request-button',
+        },
+        {
           name: 'Card Number',
         },
         {
