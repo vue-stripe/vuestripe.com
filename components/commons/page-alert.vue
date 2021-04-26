@@ -5,9 +5,20 @@
     color="primary"
     elevation="2"
   )
-    v-row(align="center")
+    v-row(align="top")
       v-col.grow
-        | {{content}}
+        p {{content}}
+        v-btn(
+          v-if="link"
+          color="primary"
+          rel="noreferrer noopener"
+          target="_blank"
+          outlined
+          small
+          depressed
+          :href="link"
+        ).text-none Read more
+          v-icon(size="16") mdi-open-in-new
       v-col.shrink
         nice
 </template>
@@ -21,7 +32,11 @@ export default {
   props: {
     content: {
       type: String,
-      default: '',
+      default: null,
+    },
+    link: {
+      type: String,
+      default: null,
     },
   },
 };
