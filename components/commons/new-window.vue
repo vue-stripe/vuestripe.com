@@ -12,11 +12,11 @@ export default {
   props: {
     link: {
       type: String,
-      default: '',
+      default: null,
     },
     text: {
       type: String,
-      default: '',
+      default: null,
     },
   },
 };

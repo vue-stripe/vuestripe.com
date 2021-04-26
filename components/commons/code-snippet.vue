@@ -10,7 +10,7 @@ export default {
   props: {
     lang: {
       type: String,
-      default: '',
+      default: null,
     },
   },
   mounted () {
