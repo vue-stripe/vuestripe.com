@@ -10,6 +10,7 @@
         @click="drawer = !drawer"
       )
         v-icon.primary--text mdi-hamburger
+      v-chip(v-if="vueStripeVersion" small color="accent").black--text @vue-stripe/vue-stripe@{{vueStripeVersion}}
       v-spacer
       v-btn(
         icon
@@ -90,7 +91,9 @@
 </template>
 
 <script>
+import getPackageVersion from 'get-npm-package-version';
 import AuthorFooter from '~/components/commons/author-footer';
+const vueStripeVersion = getPackageVersion('@vue-stripe/vue-stripe');
 export default {
   components: {
     AuthorFooter,
@@ -98,6 +101,7 @@ export default {
   data () {
     return {
       drawer: null,
+      vueStripeVersion,
       stripePluginMenus: [
         {
           name: 'Getting Started',
@@ -145,8 +149,8 @@ export default {
           route: 'stripe-elements-getting-started',
         },
         {
-          name: 'Stripe Plugin',
-          route: 'stripe-elements-plugin',
+          name: 'Separate Card Fields',
+          route: 'stripe-elements-separate-card-fields',
         },
         {
           name: 'Card',
