@@ -1444,10 +1444,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vue-stripe/vue-stripe@^4.1.8":
-  version "4.1.8"
-  resolved "https://registry.yarnpkg.com/@vue-stripe/vue-stripe/-/vue-stripe-4.1.8.tgz#3488457a1c7762bb3d02b80d195ce8747c215950"
-  integrity sha512-rc6+p6E9eMaUbulO8JCWwL3TTDLpmdK/h7ppEu9IlcKBecNbnoehi0UpA89cnsZZeswkvWNZNTf3l/xYjwKLdA==
+"@vue-stripe/vue-stripe@^4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@vue-stripe/vue-stripe/-/vue-stripe-4.2.0.tgz#2bf8ecc0bf60cd2d64ee1952ed189e111bcac7b1"
+  integrity sha512-s0/rhab+Jv5F/4xQucuehpxQ8FiVdLKO+isrT8ALAxWMh+F+07pJTutdVKLdUIUU7rl5TA4L3Gav3fpo87zQyg==
   dependencies:
     "@stripe/stripe-js" "^1.13.2"
     vue-coerce-props "^1.0.0"
@@ -4683,6 +4683,11 @@ get-caller-file@^2.0.1:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-2.0.5.tgz#4f94412a82db32f36e3b0b9741f8a97feb031f7e"
   integrity sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==
+
+get-npm-package-version@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/get-npm-package-version/-/get-npm-package-version-1.1.0.tgz#ceac40f52063382f78b2058661f348f0047d000a"
+  integrity sha512-rLRRivNEaK7yb3/UB9ESSu0e8G7/hnlav9avJ+OlvMFMXlNYKgHs9UTey58x8c5yw/fW7oNAqEn58LTpyspKWg==
 
 get-stream@^4.0.0:
   version "4.1.0"
