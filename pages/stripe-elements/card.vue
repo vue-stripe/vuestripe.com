@@ -145,7 +145,8 @@ export default {
     };
   },
   beforeDestroy () {
-    this.$refs.cardRef.element.destroy();
+    // eslint-disable-next-line no-unused-expressions
+    this.$refs.cardRef?.element?.destroy();
   },
   methods: {
     tokenCreated (token) {
