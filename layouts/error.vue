@@ -16,7 +16,7 @@ export default {
     },
   },
   data () {
-    console.log(this.error);
+    console.error(this.error);
     return {
       pageNotFound: '404 Not Found',
       otherError: 'An error occurred',
