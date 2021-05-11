@@ -26,9 +26,9 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/icons/favicon.ico' },
     ],
-    // script: [
-    //   { src: 'https://js.stripe.com/v3' },
-    // ],
+    script: [
+      { src: 'https://js.stripe.com/v3' },
+    ],
   },
   /*
   ** Customize the progress-bar color
