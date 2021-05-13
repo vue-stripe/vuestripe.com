@@ -1,7 +1,6 @@
 const LANG = 'en_US';
 const TYPE = 'website';
-// TODO: Replace this
-const SITE_NAME = 'telemedizip.com';
+const SITE_NAME = 'vuestripe.com';
 const URL = `https://${SITE_NAME}`;
 
 export default ({ title, description, socialBanner }) => {
