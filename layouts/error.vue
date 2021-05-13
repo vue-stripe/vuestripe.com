@@ -30,12 +30,12 @@ export default {
   head () {
     if (this.error.statusCode === 404) {
       return headMeta({
-        title: 'Vaxert.com - Page Not Found',
+        title: 'vuestripe.com - Page Not Found',
         description: 'Either the page has been removed or has a new link.',
       });
     } else {
       return {
-        title: `Vaxert.com - ${this.otherError}`,
+        title: `vuestripe.com - ${this.otherError}`,
         description: this.otherError,
       };
     }
