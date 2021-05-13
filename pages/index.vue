@@ -88,7 +88,7 @@ export default {
     return headMeta({
       title: 'Stripe Checkout & Elements for Vue.js - Vue Stripe',
       description: 'Vue Stripe Stripe Checkout & Vue Stripe Elements',
-      socialBanner: require('../assets/images/vue-stripe-logo-variant-1-small.png'),
+      socialBanner: require('../assets/images/home.png'),
     });
   },
 };
