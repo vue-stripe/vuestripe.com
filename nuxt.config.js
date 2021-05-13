@@ -50,7 +50,8 @@ export default {
     { src: '~/plugins/vue-analytics.js', mode: 'client', ssr: false },
     { src: '~/plugins/vue-media-query-mixin.js', mode: 'client', ssr: false },
     { src: '~/plugins/vue-stripe.js', ssr: false },
-    { src: '~/plugins/carbon-ads.js', ssr: false },
+    // TODO: bring back later
+    // { src: '~/plugins/carbon-ads.js', ssr: false },
   ],
   /*
   ** Nuxt.js dev-modules
