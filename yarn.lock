@@ -1444,10 +1444,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vue-stripe/vue-stripe@^4.2.0":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@vue-stripe/vue-stripe/-/vue-stripe-4.2.0.tgz#2bf8ecc0bf60cd2d64ee1952ed189e111bcac7b1"
-  integrity sha512-s0/rhab+Jv5F/4xQucuehpxQ8FiVdLKO+isrT8ALAxWMh+F+07pJTutdVKLdUIUU7rl5TA4L3Gav3fpo87zQyg==
+"@vue-stripe/vue-stripe@^4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@vue-stripe/vue-stripe/-/vue-stripe-4.2.1.tgz#0b46fcd3642306c57800a34cce1acb5f244baa22"
+  integrity sha512-lLdHkmSPNu2ghmbU67LunmpDoOeWjXHF5O2ZH/NH7ef3cVjtsJeA9lJ8faSJyzFtJkln5tul+4uF7v51tdeQog==
   dependencies:
     "@stripe/stripe-js" "^1.13.2"
     vue-coerce-props "^1.0.0"
