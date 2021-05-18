@@ -13,12 +13,19 @@
       v-chip(v-if="vueStripeVersion" small color="accent").black--text @vue-stripe/vue-stripe@{{vueStripeVersion}}
       v-spacer
       v-btn(
+        href="https://stripe.com/partners/vue-stripe"
+        target="_blank"
+        depressed
+        color="transparent"
+      ).mr-1.px-1
+        img(width="150" src="../assets/images/stripe_partner_badge_verified_blurple.png")
+      v-btn(
         icon
         large
         href="https://github.com/vue-stripe"
         target="_bank"
         rel="noreferrer noopener"
-      )
+      ).mr-1
         v-icon.primary--text mdi-github
       v-btn(
         icon
