@@ -43,7 +43,7 @@
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
     "jest": "^24.1.0",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "pug-plain-loader": "^1.0.0",
     "raw-loader": "^4.0.2",
     "vue-jest": "^4.0.0-0"
