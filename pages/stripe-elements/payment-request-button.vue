@@ -12,7 +12,7 @@
       v-col(cols="12" md="10").pa-0
         v-card
           v-card-text
-            label Payment Request Button
+            label.mb-5 Payment Request Button
             stripe-element-payment-request-button(
               ref="paymentRequestButtonRef"
               currency="usd"
@@ -21,6 +21,9 @@
               :totalAmount="1000"
               :pk="pk"
             )
+            //- TODO: add more info
+            //- steps on how to use
+            //- docs for props and event
 </template>
 
 <script>
