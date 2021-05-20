@@ -74,6 +74,7 @@ export default {
     this.sessionIdCheckoutSnippet = sessionIdCheckoutSnippet;
     return {
       sessionLoading: false,
+      redirectState: '',
       redirectDialog: false,
       sessionPayload: {
         success_url: process.client && `${window.location.origin}${window.location.pathname}?state=success`,
@@ -98,14 +99,16 @@ export default {
     cancelURL () {
       return process.client && `${window.location.origin}${window.location.pathname}?state=cancel`;
     },
+    queryState () {
+      return process.client && (new URLSearchParams(window.location.search).get('state') || '');
+    },
   },
   mounted () {
-    const { state } = this.$route.query;
-    if (state === 'success') {
+    if (this.queryState === 'success') {
       this.redirectState = 'success';
       this.redirectDialog = true;
     }
-    if (state === 'cancel') {
+    if (this.queryState === 'cancel') {
       this.redirectState = 'cancel';
       this.redirectDialog = true;
     }

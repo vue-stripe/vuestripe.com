@@ -1,10 +1,13 @@
 <template lang="pug">
   v-container(fill-height)
-    div(v-if="!$isMobile" style="position: absolute; top: 10px; left: 10px; width: 130px;")
-      carbon-ads
+    //- div(v-if="!$isMobile" style="position: absolute; top: 10px; left: 10px; width: 130px;")
+    //-   carbon-ads
     v-row(justify="center" align="center")
       v-col(cols="12" md="12").text-center
         img(:width="$isMobile ? '150' : '250'" src="../assets/images/vue-stripe-logo-variant-1-small.png")
+        br
+        a(href="https://stripe.com/partners/vue-stripe" target="_blank")
+          img(width="180" src="../assets/images/stripe_partner_badge_verified_blurple.png")
         h1(:style="{ 'font-size': $isMobile ? '40px' : '70px' }") Vue #[span.primary--text Stripe] 💳
         h2 Stripe Checkout & Elements for Vue.js
         br
@@ -88,7 +91,7 @@ export default {
     return headMeta({
       title: 'Stripe Checkout & Elements for Vue.js - Vue Stripe',
       description: 'Vue Stripe Stripe Checkout & Vue Stripe Elements',
-      socialBanner: require('../assets/images/vue-stripe-logo-variant-1-small.png'),
+      socialBanner: require('../assets/images/home.png'),
     });
   },
 };

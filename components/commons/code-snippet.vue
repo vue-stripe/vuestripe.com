@@ -1,7 +1,8 @@
 <template lang="pug">
-  pre
-    code(:class="lang")
-      slot(name="default")
+  v-card
+    pre
+      code(:class="lang")
+        slot(name="default")
 </template>
 
 <script>

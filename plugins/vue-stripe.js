@@ -4,7 +4,6 @@ import {
   StripeCheckout,
   StripeElementCard,
   StripeElementPaymentRequestButton,
-  // StripeElementsPlugin,
 } from '@vue-stripe/vue-stripe';
 
 export default () => {
@@ -12,5 +11,4 @@ export default () => {
   Vue.component('StripeElementCard', StripeElementCard);
   Vue.component('StripeElementPaymentRequestButton', StripeElementPaymentRequestButton);
   Vue.use(StripePlugin, { pk: process.env.STRIPE_PK });
-  // Vue.use(StripeElementsPlugin, { pk: process.env.STRIPE_PK });
 };

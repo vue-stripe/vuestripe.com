@@ -1,24 +1,11 @@
 <template lang="pug">
   v-row(justify="center")
     v-col(cols="12")
-      h1.mb-1 Stripe Plugin
-      page-alert(content="Vue.js for Stripe Elements")
-      p Since not all of the Stripe Elements types are supported yet, I decided to expose the Elements object via Vue prototype. This will give you full control over the usage Stripe Elements instance.
-      p You can use this without using the other Vue Stripe components.
+      h1.mb-1 Separate Card Fields using #[span.primary--text Vue Stripe Plugin]
+      page-alert(content="This is just one use-case of Vue Stripe Plugin.")
       carbon-ads(v-if="$isMobile")
     v-col(cols="12")
-      h1.mb-5 Install
-      //- p Add the Stripe js sdk in the html head.
-      //- code-snip(lang="language-html") {{elementsPluginUsageAddSdk}}
-      p Import and register the #[code StripePlugin] plugin.
-      code-snip(lang="language-javascript") {{stripePluginUsage}}
-      p This will give you access to #[code this.$stripe]. Using this you can create now create an instance of Stripe Elements.
-      p With this, you can now access the Elements methods like, #[code .create], #[code .getElement], and more. See #[a(src="https://stripe.com/docs/js/elements_object/create" rel="noreferrer noopener") here].
-    v-col(cols="12")
-      h1.mb-5 Use Case
-      p Separate components for each card fields.
-      p Official component for these are still in development. So this is just a sample to help you implement them on your own.
-      h1.mb-5 Live Demo
+      h2.mb-5 Live Demo
       v-card
         v-card-text
           label Card Number
@@ -42,6 +29,19 @@
                   v-icon mdi-close
               v-card-text.px-2.py-1
                 code-snip(lang="language-javascript") {{token}}
+    v-col(cols="12")
+      h2.mb-5 Step 1 - Import Stripe JavaScript SDK
+      install-stripe-js-sdk
+    v-col(cols="12")
+      h2.mb-5 Step 2 - Install Vue Stripe Plugin
+      p Import and register the #[code StripePlugin] plugin.
+      code-snip(lang="language-javascript") {{stripePluginUsage}}
+      p This will give you access to #[code this.$stripe]. Using this you can create now create an instance of Stripe Elements.
+      p With this, you can now access the Elements methods like, #[code .create], #[code .getElement], and more. See #[a(src="https://stripe.com/docs/js/elements_object/create" rel="noreferrer noopener") here].
+    v-col(cols="12")
+      h2.mb-5 Step 3 - Use Case
+      p Separate components for each card fields.
+      p Official component for these are still in development. So this is just a sample to help you implement them on your own.
       code-snip(lang="language-html") {{elementsPluginUsageSeparateElements}}
 </template>
 
@@ -49,6 +49,7 @@
 import headMeta from '~/utils/head-meta';
 import PageAlert from '~/components/commons/page-alert';
 import CodeSnip from '~/components/commons/code-snippet';
+import InstallStripeJsSdk from '~/components/commons/install-stripe-js-sdk';
 import elementsPluginUsageAddSdk from '~/assets/snippets/stripe-elements/plugin-usage-add-sdk.md';
 import stripePluginUsage from '~/assets/snippets/stripe-plugin/plugin-usage.md';
 import elementsPluginUsageSeparateElements from '~/assets/snippets/stripe-plugin/plugin-usage-separate-elements.md';
@@ -57,6 +58,7 @@ export default {
   components: {
     PageAlert,
     CodeSnip,
+    InstallStripeJsSdk,
   },
   data () {
     this.elementsPluginUsageAddSdk = elementsPluginUsageAddSdk;
@@ -64,6 +66,7 @@ export default {
     this.elementsPluginUsageSeparateElements = elementsPluginUsageSeparateElements;
     return {
       tokenDialog: false,
+      //
       token: null,
       cardNumber: null,
       cardExpiry: null,
@@ -117,7 +120,7 @@ export default {
   },
   head () {
     return headMeta({
-      title: 'Elements Plugin - Vue Stripe Elements',
+      title: 'Stripe Card Fields - Vue Stripe Plugin',
       description: 'How to use Stripe Elements fields separately in Vue',
       socialBanner: require('../../assets/images/vue-stripe-logo-variant-1-small.png'),
     });
