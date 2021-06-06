@@ -137,7 +137,7 @@ export default {
           route: 'stripe-checkout-sessions-generator',
         },
         {
-          name: 'Google & Apply Pay',
+          name: 'Google & Apple Pay',
           route: 'stripe-checkout-google-and-apple-pay',
           isNew: true,
         },
