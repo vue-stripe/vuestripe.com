@@ -28,7 +28,7 @@ export default {
       links: [
         {
           name: 'Code',
-          link: 'https://github.com/jofftiquez/vue-stripe-checkout-nuxt-demo',
+          link: 'https://github.com/vue-stripe/vue-stripe-checkout-nuxt-demo',
         },
         {
           name: 'SPA Demo on Firebase Hosting',
