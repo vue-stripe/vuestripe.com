@@ -164,6 +164,11 @@ export default {
           route: 'stripe-elements-card',
         },
         {
+          name: 'Payment',
+          route: 'stripe-elements-payment',
+          isNew: true,
+        },
+        {
           name: 'Card Number',
         },
         {
