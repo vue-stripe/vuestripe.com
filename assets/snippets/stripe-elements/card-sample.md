@@ -2,7 +2,7 @@
   <div>
     <stripe-element-card
       ref="elementRef"
-      :pk="pulishableKey"
+      :pk="publishableKey"
       @token="tokenCreated"
     />
     <button @click="submit">Generate token</button>
@@ -16,7 +16,7 @@ export default {
     StripeElementCard,
   },
   data () {
-    this.pulishableKey = process.env.STRIPE_PUBLISHABLE_KEY;
+    this.publishableKey = process.env.STRIPE_PUBLISHABLE_KEY;
     return {
       token: null,
     };

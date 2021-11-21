@@ -15,6 +15,14 @@
     "link": "https://stripe.com/docs/js/elements_object/create#stripe_elements-options"
   },
   {
+    "name": "tokenData",
+    "type": "object",
+    "default": "none",
+    "required": "no",
+    "description": "An object containing additional payment information you might have collected.  Although these fields are optional, we highly recommend collecting name and address.",
+    "link": "https://stripe.com/docs/js/tokens_sources/create_token?type=cardElement"
+  },
+  {
     "name": "disableAdvancedFraudDetection",
     "type": "boolean",
     "default": "false",
