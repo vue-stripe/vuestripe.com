@@ -21,7 +21,7 @@ export default {
       token: null,
     };
   },
-  method: {
+  methods: {
     submit () {
       // this will trigger the process
       this.$refs.elementRef.submit();
