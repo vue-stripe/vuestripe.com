@@ -17,16 +17,16 @@
           color="primary"
           outlined
           rounded
+          href="https://docs.vuestripe.com/vue-stripe/stripe-checkout"
           :block="$isMobile"
-          :to="{ name: 'stripe-checkout-getting-started' }"
         ).mx-1.my-1.text-none Stripe Checkout
         v-btn(
           x-large
           color="primary"
           outlined
           rounded
+          href="https://docs.vuestripe.com/vue-stripe/stripe-elements"
           :block="$isMobile"
-          :to="{ name: 'stripe-elements-getting-started' }"
         ).mx-1.my-1.text-none Stripe Elements
         v-btn(
           x-large
