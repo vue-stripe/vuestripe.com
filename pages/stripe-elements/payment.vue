@@ -107,7 +107,7 @@ export default {
           url: `${process.env.API_URL}/paymentIntents`,
         });
         console.warn('Payment Intent', data);
-        this.clientSecret.clientSecret = data.client_secret;
+        this.elementOptions.clientSecret = data.client_secret;
         this.success = true;
       } catch (e) {
         console.error(e);
