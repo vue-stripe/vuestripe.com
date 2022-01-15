@@ -164,35 +164,39 @@ export default {
           route: 'stripe-elements-card',
         },
         {
-          name: 'Card Number',
+          name: 'Payment',
+          route: 'stripe-elements-payment',
         },
-        {
-          name: 'Card Expiry',
-        },
-        {
-          name: 'Card CVC',
-        },
-        {
-          name: 'FPX Bank',
-        },
-        {
-          name: 'Iban',
-        },
-        {
-          name: 'Ideal Bank',
-        },
-        {
-          name: 'P24 Bank',
-        },
-        {
-          name: 'EPS Bank',
-        },
-        {
-          name: 'Payment Request Button',
-        },
-        {
-          name: 'AU Bank Account',
-        },
+        // {
+        //   name: 'Card Number',
+        // },
+        // {
+        //   name: 'Card Expiry',
+        // },
+        // {
+        //   name: 'Card CVC',
+        // },
+        // {
+        //   name: 'FPX Bank',
+        // },
+        // {
+        //   name: 'Iban',
+        // },
+        // {
+        //   name: 'Ideal Bank',
+        // },
+        // {
+        //   name: 'P24 Bank',
+        // },
+        // {
+        //   name: 'EPS Bank',
+        // },
+        // {
+        //   name: 'Payment Request Button',
+        // },
+        // {
+        //   name: 'AU Bank Account',
+        // },
         // {
         //   name: 'FAQs',
         //   route: 'stripe-elements-faqs',
