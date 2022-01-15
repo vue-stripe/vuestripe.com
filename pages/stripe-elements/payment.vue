@@ -72,7 +72,7 @@ export default {
     this.paymentIntentData = paymentIntentData;
     return {
       loading: false,
-      success: true,
+      success: false,
       redirectDialog: false,
       redirectState: '',
       clientSecret: null,
@@ -106,7 +106,6 @@ export default {
           method: 'post',
           url: `${process.env.API_URL}/paymentIntents`,
         });
-        console.warn('Payment Intent', data);
         this.elementOptions.clientSecret = data.client_secret;
         this.success = true;
       } catch (e) {
