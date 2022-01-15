@@ -4,6 +4,7 @@
   "description": "Vaxert",
   "author": "Jofferson R Tiquez",
   "private": true,
+  "engines" : { "node" : ">=12" },
   "scripts": {
     "dev": "NODE_ENV=production nuxt",
     "build": "nuxt build",
