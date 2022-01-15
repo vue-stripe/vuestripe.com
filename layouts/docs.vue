@@ -61,7 +61,7 @@
             v-list-item-title Payment Methods #[small #[i Coming Soon]]
         v-list-group(:value="true")
           template(v-slot:activator)
-            v-list-item-title Vue Stripe Plugin #[v-icon.red--text mdi-new-box]
+            v-list-item-title Vue Stripe Plugin
           template(v-for="menu in stripePluginMenus")
             v-list-item(:to="{ name: menu.route }")
               v-list-item-content
@@ -139,7 +139,6 @@ export default {
         {
           name: 'Google & Apple Pay',
           route: 'stripe-checkout-google-and-apple-pay',
-          isNew: true,
         },
         // {
         //   name: 'FAQs',
@@ -166,6 +165,7 @@ export default {
         {
           name: 'Payment',
           route: 'stripe-elements-payment',
+          isNew: true,
         },
         // {
         //   name: 'Card Number',
