@@ -16,8 +16,11 @@
       v-col(cols="12" md="10").pa-0
         p The ClientScret from the request above will be used as an option to render the UI.
         v-card
-          v-card-text(v-if="loading")
-            p loading
+          v-card-text(v-if="loading").text-xs-center
+            v-progress-circular(
+              color="primary"
+              indeterminate
+            )
           v-card-text(v-if="!loading && success")
             stripe-element-payment(
               ref="paymentRef"
@@ -103,8 +106,8 @@ export default {
           method: 'post',
           url: `${process.env.API_URL}/paymentIntents`,
         });
+        console.warn('Payment Intent', data);
         this.clientSecret.clientSecret = data.client_secret;
-        console.warn(data);
         this.success = true;
       } catch (e) {
         console.error(e);
