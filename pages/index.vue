@@ -43,11 +43,11 @@
           color="primary"
           outlined
           rounded
-          href="https://opencollective.com/vue-stripe-checkout"
+          href="https://github.com/sponsors/jofftiquez"
           rel="noreferrer noopener"
           target="_blank"
           :block="$isMobile"
-        ).mx-1.my-1.text-none Open Collective
+        ).mx-1.my-1.text-none GitHub Sponsors
         v-btn(
           x-large
           color="primary"
