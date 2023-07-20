@@ -1,146 +1,89 @@
-const path = require('path');
+// const LANG = 'en_US';
+// const TYPE = 'website';
+// const URL = 'https://hippocrades.com';
+// const SITE_NAME = 'hippocrades.com';
 
-export default {
-  mode: 'universal',
-  env: {
-    ADSENSE_CA_PUB: process.env.ADSENSE_CA_PUB,
-    API_URL: process.env.API_URL,
-    CA_PLACEMENT: process.env.CA_PLACEMENT,
-    CA_SERVE: process.env.CA_SERVE,
-    ENV: process.env.ENV,
-    GA_ID: process.env.GA_ID,
-    NODE_ENV: process.env.NODE_ENV,
-    STRIPE_PK: process.env.STRIPE_PK,
+// https://nuxt.com/docs/api/configuration/nuxt-config
+// eslint-disable-next-line no-undef
+export default defineNuxtConfig({
+  preset: 'node-server',
+
+  imports: {
+    autoImport: false,
   },
-  /*
-  ** Headers of the page
-  */
-  head: {
-    titleTemplate: '%s',
-    title: process.env.npm_package_name || '',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/icons/favicon.ico' },
-    ],
-    script: [
-      { src: 'https://js.stripe.com/v3' },
-    ],
+
+  modules: ['@nuxtjs/tailwindcss', 'nuxt-headlessui', 'nuxt-gtag', '@nuxt/content'],
+
+  gtag: {
+    // id: 'G-SDCBMR60FY',
   },
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#fff' },
-  /*
-  ** Global CSS
-  */
-  css: [
-  ],
-  /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-    { src: '~/plugins/prism.js', mode: 'client', ssr: false },
-    { src: '~/plugins/crisp.js', mode: 'client', ssr: false },
-    { src: '~/plugins/ga.js', mode: 'client', ssr: false },
-    { src: '~/plugins/media-screen.js', mode: 'client', ssr: false },
-    { src: '~/plugins/vue-analytics.js', mode: 'client', ssr: false },
-    { src: '~/plugins/vue-media-query-mixin.js', mode: 'client', ssr: false },
-    { src: '~/plugins/vue-stripe.js', ssr: false },
-    // TODO: bring back later
-    // { src: '~/plugins/carbon-ads.js', ssr: false },
-  ],
-  /*
-  ** Nuxt.js dev-modules
-  */
-  buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify',
-    '@nuxtjs/google-analytics',
-  ],
-  googleAnalytics: {
-    id: process.env.GA_ID,
-  },
-  /*
-  ** Nuxt.js modules
-  */
-  modules: [
-    '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv',
-    'nuxt-webfontloader',
-    '@nuxtjs/axios',
-    // ['@nuxtjs/google-adsense']
-  ],
-  // Google Adsense
-  // 'google-adsense': {
-  //   id: process.env.ADSENSE_CA_PUB,
+
+  // nitro: {
+  //   preset: 'firebase',
   // },
-  /**
-   * Google Web Fonts
-   */
-  webfontloader: {
-    google: {
-      families: [
-        'Open Sans:400,500,600,700,900',
-        'JetBrains Mono:400,500,600,700,900',
+
+  srcDir: './src',
+
+  runtimeConfig: {
+    public: {
+      yourEnv: process.env.YOUR_ENV,
+    },
+  },
+
+  plugins: [
+    {
+      src: '@/plugins/aos',
+      ssr: false,
+      mode: 'client',
+    },
+  ],
+
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css',
+        },
       ],
     },
   },
-  /*
-  ** vuetify module configuration
-  ** https://github.com/nuxt-community/vuetify-module
-  */
-  vuetify: {
-    customVariables: ['~/assets/variables.scss'],
-    theme: {
-      themes: {
-        light: {
-          primary: '#635BFF',
-          accent: '#FFD96A',
-          secondary: '#3297D3',
-          info: '#45B2E8',
-          warning: '#E37C4C',
-          error: '#C23D4B',
-          success: '#24B47E',
-        },
-        dark: {
-          primary: '#635BFF',
-          accent: '#FFD96A',
-          secondary: '#3297D3',
-          info: '#45B2E8',
-          warning: '#E37C4C',
-          error: '#C23D4B',
-          success: '#24B47E',
-        },
-      },
-    },
+
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+    configPath: 'tailwind.config',
+    exposeConfig: false,
+    exposeLevel: 2,
+    config: {},
+    injectPosition: 'first',
+    viewer: true,
   },
-  /*
-  ** Build configuration
-  */
+
+  headlessui: {
+    prefix: 'Headless',
+  },
+
   build: {
-    extend (config, { isDev, isClient }) {
-      // ..
-      config.module.rules.push({
-        test: /\.md$/i,
-        loader: 'raw-loader',
-      });
-      config.module.rules.push({
-        test: /\.js$/,
-        enforce: 'pre',
-        use: 'eslint-loader',
-        include: path.resolve(__dirname), // <-- This tell to eslint to look only in your project folder
-        exclude: /node_modules/
-      });
-      // Sets webpack's mode to development if `isDev` is true.
-      if (isDev) {
-        config.mode = 'development';
-      }
+    extend (config, ctx) {
+      config.resolve.symlinks = false;
     },
   },
-};
+
+  image: {
+    dir: 'assets/images',
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      '2xl': 1536,
+      '3xl': 1920,
+    },
+  },
+
+  devtools: {
+    enabled: true,
+  },
+});

@@ -1,0 +1,19 @@
+/* Custom fonts here */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../fonts/JetBrainsMono-Regular.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply: bg-base-100;
+}
+
+code {
+  font-family: 'JetBrains Mono', monospace;
+}
