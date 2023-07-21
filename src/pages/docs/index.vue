@@ -1,6 +1,7 @@
 <template>
   <main>
-    <ContentSlot :use="$slots.default" />
+    <b>Hello HAHAHA</b>
+    <ContentDoc path="/docs/about" />
   </main>
 </template>
 
