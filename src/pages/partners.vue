@@ -1,6 +1,6 @@
 <template>
-  <main class="bg-base-200">
-    <h1>Getting Started</h1>
+  <main>
+    <h1>Partners</h1>
   </main>
 </template>
 
@@ -10,11 +10,11 @@ import { useSeoMeta, definePageMeta } from '#imports';
 export default {
   setup () {
     definePageMeta({
-      layout: 'docs',
+      layout: 'default',
     });
 
-    const metaTitle = 'Geting Started - Vue Stripe Docs';
-    const metaDescription = 'Get started with Vue Stripe.';
+    const metaTitle = 'Partners - Vue Stripe';
+    const metaDescription = 'Partners of Vue Stripe.';
 
     useSeoMeta({
       title: metaTitle,
