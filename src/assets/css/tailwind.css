@@ -1,0 +1,21 @@
+/* Custom fonts here */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../fonts/JetBrainsMono-Regular.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.btn {
+  @apply normal-case font-semibold;
+}
