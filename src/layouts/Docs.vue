@@ -1,6 +1,6 @@
 <template>
   <div :data-theme="theme">
-    <div :class="`navbar fixed bg-base-100 z-40 shadow-sm`">
+    <div :class="`navbar bg-base-100 z-40 shadow-sm`">
       <div class="navbar-start">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -48,44 +48,15 @@
 
 <script>
 import { ref, watch, onMounted, computed } from 'vue';
-import { useRoute } from '../../.nuxt/vue-router';
-const THEMES = [
-  'light',
-  'dark',
-  'cupcake',
-  'bumblebee',
-  'emerald',
-  'corporate',
-  'synthwave',
-  'retro',
-  'cyberpunk',
-  'valentine',
-  'halloween',
-  'garden',
-  'forest',
-  'aqua',
-  'lofi',
-  'pastel',
-  'fantasy',
-  'wireframe',
-  'black',
-  'luxury',
-  'dracula',
-  'cmyk',
-  'autumn',
-  'business',
-  'acid',
-  'lemonade',
-  'night',
-  'coffee',
-  'winter',
-];
+import { useRoute } from 'vue-router';
 export default {
   setup () {
     const theme = ref(null);
+
     watch(theme, (value) => {
       localStorage.setItem('daisyui-theme', value);
     });
+
     onMounted(() => {
       theme.value = localStorage.getItem('daisyui-theme') || 'dark';
       toggleTheme.value = theme.value === 'dark';
@@ -101,13 +72,11 @@ export default {
     });
 
     const route = useRoute();
-    console.warn('route', route.name);
     const isGui = computed(() => route.name === 'gui');
 
     return {
       toggleTheme,
       theme,
-      themes: THEMES,
       isGui,
     };
   },
