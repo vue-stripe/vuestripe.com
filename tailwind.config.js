@@ -3,12 +3,6 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      colors: {
-        primary: '#8ae234',
-        secondary: '#729fcf',
-        'stripe-purple': '#625bfe',
-        'stripe-yellow': '#ffd86a',
-      },
       fontFamily: {
         primary: ['Inter'],
         code: ['JetBrains Mono'],
@@ -17,35 +11,20 @@ module.exports = {
   },
   daisyui: {
     themes: [
-      'light',
-      'dark',
-      'cupcake',
-      'bumblebee',
-      'emerald',
-      'corporate',
-      'synthwave',
-      'retro',
-      'cyberpunk',
-      'valentine',
-      'halloween',
-      'garden',
-      'forest',
-      'aqua',
-      'lofi',
-      'pastel',
-      'fantasy',
-      'wireframe',
-      'black',
-      'luxury',
-      'dracula',
-      'cmyk',
-      'autumn',
-      'business',
-      'acid',
-      'lemonade',
-      'night',
-      'coffee',
-      'winter',
+      {
+        light: {
+          ...require('daisyui/src/theming/themes')['[data-theme=light]'],
+          primary: '#635afe',
+          secondary: '#43b983',
+        },
+      },
+      {
+        dark: {
+          ...require('daisyui/src/theming/themes')['[data-theme=dark]'],
+          primary: '#fbd96a',
+          secondary: '#43b983',
+        },
+      },
     ],
   },
   plugins: [
